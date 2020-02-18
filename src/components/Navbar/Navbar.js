@@ -13,7 +13,7 @@ const Wrapper = styled.header`
 
 const Navbar = ({ siteTitle }) => (
   <Wrapper>
-    <img src={logo} />
+    <img src={logo} alt="branch logo" />
   </Wrapper>
 )
 

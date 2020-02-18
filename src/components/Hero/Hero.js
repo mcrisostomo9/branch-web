@@ -8,6 +8,17 @@ import { backgroundGatsbyImage, mq } from "../../utils/styles"
 const Root = styled.div`
   position: relative;
   padding: 3rem 1rem;
+
+  @media (min-width: ${mq.m768}) {
+    padding: 3rem 2rem;
+  }
+  @media (min-width: ${mq.m1024}) {
+    padding: 3rem;
+  }
+  @media (min-width: ${mq.m1280}) {
+  }
+  @media (min-width: ${mq.m1440}) {
+  }
 `
 
 const HeroText = styled.div`
@@ -57,6 +68,7 @@ const HeroText = styled.div`
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-size: 3rem;
+    line-height: 1;
 
     @media (min-width: ${mq.m768}) {
       font-size: 3.5rem;

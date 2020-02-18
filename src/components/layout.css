@@ -351,6 +351,8 @@ template {
 
 :root{
   --max-width: 1450px;
+  --dark-theme: #0e151f;
+  --light-theme: #e1e1e1;
 }
 
 *,
