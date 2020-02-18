@@ -9,6 +9,12 @@ const Wrapper = styled.header`
   margin: 0 auto;
   width: 100%;
   max-width: var(--max-width);
+
+  img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
 `
 
 const Navbar = ({ siteTitle }) => (
