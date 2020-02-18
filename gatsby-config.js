@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `branch`,
+    description: `branch description`,
+    author: `@mcrisostomo9`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,9 +34,21 @@ module.exports = {
         dataset: 'production',
         // a token with read permissions is required
         // if you have a private dataset
-        token: process.env.MY_SANITY_TOKEN,
+        // token: process.env.MY_SANITY_TOKEN,
       },
     },
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: [`400`,`600`,`700`]
+          },
+        ],
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
