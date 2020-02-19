@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import Navbar from "../Navbar/Navbar"
 import { backgroundGatsbyImage, mq } from "../../utils/styles"
 
 const Root = styled.div`
@@ -89,7 +88,6 @@ const Hero = () => {
   const { hero } = useStaticQuery(HERO_QUERY)
   return (
     <Root>
-      <Navbar />
       <Img fluid={hero.childImageSharp.fluid} style={backgroundGatsbyImage} />
       <HeroText>
         <h2>we build and launch</h2>

@@ -8,10 +8,12 @@
 import React from "react"
 
 import "./layout.css"
+import Navbar from "./Navbar/Navbar"
 
 const Layout = ({ children }) => {
   return (
     <>
+      <Navbar />
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
