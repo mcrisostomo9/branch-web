@@ -3,24 +3,9 @@ import styled from "styled-components"
 import { mq } from "../../utils/styles"
 import SectionTitle from "../Shared/SectionTitle"
 import SectionSubtitle from "../Shared/SectionSubtitle"
+import Container from "../Shared/Container"
 
-const Root = styled.section`
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 3rem 1rem;
-
-  @media (min-width: ${mq.m768}) {
-    padding: 3rem 0;
-  }
-  @media (min-width: ${mq.m1024}) {
-    padding: 3rem 0;
-  }
-  @media (min-width: ${mq.m1280}) {
-  }
-  @media (min-width: ${mq.m1440}) {
-  }
-`
+const Root = styled(Container)``
 
 const TextContainer = styled.div`
   display: flex;

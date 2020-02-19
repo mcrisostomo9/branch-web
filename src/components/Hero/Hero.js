@@ -3,41 +3,24 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { backgroundGatsbyImage, mq } from "../../utils/styles"
+import Container from "../Shared/Container"
 
 const Root = styled.div`
   position: relative;
-  padding: 3rem 1rem;
-
-  @media (min-width: ${mq.m768}) {
-    padding: 3rem 2rem;
-  }
-  @media (min-width: ${mq.m1024}) {
-    padding: 3rem;
-  }
-  @media (min-width: ${mq.m1280}) {
-  }
-  @media (min-width: ${mq.m1440}) {
-  }
 `
 
-const HeroText = styled.div`
+const HeroText = styled(Container)`
   position: relative;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: auto;
   z-index: 1;
-  padding: 3rem 0;
-
-  @media (min-width: ${mq.m768}) {
-    padding: 3rem 0;
-  }
 
   @media (min-width: ${mq.m1024}) {
-    padding: 5rem 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   @media (min-width: ${mq.m1440}) {
-    padding: 8rem 0;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 
   h2 {
@@ -73,13 +56,13 @@ const HeroText = styled.div`
       font-size: 3.5rem;
     }
     @media (min-width: ${mq.m1024}) {
-      font-size: 5rem;
+      font-size: 4.5rem;
     }
     @media (min-width: ${mq.m1280}) {
-      font-size: 5.5rem;
+      font-size: 5rem;
     }
     @media (min-width: ${mq.m1440}) {
-      font-size: 7.5rem;
+      font-size: 6rem;
     }
   }
 `

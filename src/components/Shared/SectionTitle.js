@@ -17,7 +17,7 @@ const Root = styled.h3`
     font-size: 4rem;
   }
   @media (min-width: ${mq.m1440}) {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
 `
 

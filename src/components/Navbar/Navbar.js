@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import logo from "../../images/logo.svg"
 import { mq } from "../../utils/styles"
+import Container from "../Shared/Container"
 
 const Wrapper = styled.header`
   position: absolute;
@@ -11,26 +12,9 @@ const Wrapper = styled.header`
   left: 0;
   right: 0;
   z-index: 10;
-  padding: 1rem 1rem;
-
-  @media (min-width: ${mq.m768}) {
-    padding: 3rem 2rem;
-  }
-
-  @media (min-width: ${mq.m1024}) {
-    padding: 3rem;
-  }
-
-  @media (min-width: ${mq.m1280}) {
-  }
-  @media (min-width: ${mq.m1440}) {
-  }
 `
 
-const InnerContainer = styled.nav`
-  margin: 0 auto;
-  width: 100%;
-  max-width: var(--max-width);
+const InnerContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
 `
@@ -39,8 +23,16 @@ const LogoLink = styled(Link)``
 
 const Logo = styled.img`
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   height: 100%;
+
+  @media (min-width: ${mq.m768}) {
+    max-width: 175px;
+  }
+
+  @media (min-width: ${mq.m1024}) {
+    max-width: 200px;
+  }
 `
 
 const LinkContainer = styled.ul`
@@ -90,10 +82,10 @@ const Button = styled.button`
   }
 `
 
-const Navbar = ({ siteTitle }) => (
+const Navbar = () => (
   <Wrapper>
-    <InnerContainer>
-      <LogoLink>
+    <InnerContainer as="nav">
+      <LogoLink to="/">
         <Logo src={logo} alt="branch logo" />
       </LogoLink>
       <LinkContainer>
@@ -115,6 +107,8 @@ const Navbar = ({ siteTitle }) => (
           </Button>
         </li>
       </LinkContainer>
+      {/*TODO revisit mobile container*/}
+      {/*<MobileContainer />*/}
     </InnerContainer>
   </Wrapper>
 )

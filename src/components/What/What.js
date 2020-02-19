@@ -5,12 +5,9 @@ import styled from "styled-components"
 import SectionTitle from "../Shared/SectionTitle"
 import { mq } from "../../utils/styles"
 import SectionSubtitle from "../Shared/SectionSubtitle"
+import Container from "../Shared/Container"
 
-const Root = styled.section`
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 3rem 1rem;
+const Root = styled(Container)`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
@@ -18,11 +15,9 @@ const Root = styled.section`
   align-items: center;
 
   @media (min-width: ${mq.m768}) {
-    padding: 3rem 0rem;
   }
   @media (min-width: ${mq.m1024}) {
     grid-template-columns: 5fr 4fr;
-    padding: 3rem 0rem;
   }
   @media (min-width: ${mq.m1280}) {
   }
@@ -47,7 +42,7 @@ const What = () => {
         consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+        ullamco laboris nisi ut aliquip ex ea commodo consequat."
         />
       </TextContainer>
       <Img fluid={whatImg.childImageSharp.fluid} />
