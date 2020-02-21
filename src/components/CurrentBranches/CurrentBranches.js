@@ -22,6 +22,7 @@ const TextContainer = styled.div`
 const BranchesContainer = styled(Container)`
   //margin-top: 3rem;
   //padding-left: 5rem;
+  padding-top: 0;
 `
 
 const params = {
