@@ -25,10 +25,13 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
+  width: 100%;
+  max-width: 500px;
 `
 
 const Title = styled.div`
   color: #fff;
+  font-size: 2rem;
 `
 
 const Description = styled.p`
@@ -38,9 +41,14 @@ const Description = styled.p`
 const Form = styled.form`
   margin: auto;
   width: 100%;
+  max-width: 650px;
+  margin-left: 2rem;
 
   input {
     width: 100%;
+    border-radius: 1px;
+    border: none;
+    padding: 1rem;
   }
 `
 
@@ -57,7 +65,7 @@ const Newsletter = () => {
         </Description>
       </TextContainer>
       <Form>
-        <input type="email" />
+        <input type="email" placeholder="Please enter your email" />
       </Form>
     </Root>
   )
