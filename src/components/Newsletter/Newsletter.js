@@ -3,20 +3,29 @@ import styled from "styled-components"
 import Container from "../Shared/Container"
 import { mq } from "../../utils/styles"
 import bg from "../../images/newsletter-bg.png"
+import mailIcon from "../../images/icon-mail.svg"
 
 const Root = styled(Container)`
+  display: flex;
   margin-top: 5rem;
+`
+
+const MainContainer = styled.div`
+  width: 100%;
   position: relative;
-  padding: 3rem 0;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  background: url(${bg});
-  background-size: cover;
-  background-repeat: no-repeat;
+  border-radius: 5px;
+  background: #0e151f;
 
   @media (min-width: ${mq.m768}) {
     flex-direction: row;
-    grid-gap: 2rem;
+    background: url(${bg}) no-repeat;
+    background-size: cover;
+
+    padding: 3rem;
+    justify-content: center;
   }
 `
 
@@ -24,14 +33,34 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: baseline;
   width: 100%;
   max-width: 500px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: ${mq.m768}) {
+    align-items: baseline;
+    text-align: left;
+  }
 `
 
 const Title = styled.div`
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
+
+  img {
+    width: 30px;
+    height: auto;
+    margin-right: 1rem;
+  }
+
+  @media (min-width: ${mq.m768}) {
+    font-size: 1.75rem;
+  }
+  @media (min-width: ${mq.m1280}) {
+    font-size: 2rem;
+  }
 `
 
 const Description = styled.p`
@@ -39,34 +68,50 @@ const Description = styled.p`
 `
 
 const Form = styled.form`
-  margin: auto;
   width: 100%;
-  max-width: 650px;
-  margin-left: 2rem;
+
+  //margin: auto auto auto 2rem;
+  margin-top: 1rem;
 
   input {
     width: 100%;
-    border-radius: 1px;
+    border-radius: 5px;
     border: none;
     padding: 1rem;
   }
+
+  @media (min-width: ${mq.m768}) {
+    max-width: 650px;
+    margin-left: 3rem;
+  }
 `
+
+// const LeftBranch = styled.img`
+//   //position: absolute;
+//   width: 180px;
+//   //left: -100px;
+//   z-index: 0;
+//   //top: 50%;
+// `
 
 const Newsletter = () => {
   return (
     <Root>
-      <TextContainer>
-        <Title>
-          join the <strong>branch</strong> newsletter
-        </Title>
-        <Description>
-          insights on our business and how we help shape the digital world one
-          branch at a time...
-        </Description>
-      </TextContainer>
-      <Form>
-        <input type="email" placeholder="Please enter your email" />
-      </Form>
+      <MainContainer>
+        <TextContainer>
+          <Title>
+            <img src={mailIcon} />
+            join the <strong>branch</strong> newsletter
+          </Title>
+          <Description>
+            insights on our business and how we help shape the digital world one
+            branch at a time...
+          </Description>
+        </TextContainer>
+        <Form>
+          <input type="email" placeholder="Please enter your email" />
+        </Form>
+      </MainContainer>
     </Root>
   )
 }
