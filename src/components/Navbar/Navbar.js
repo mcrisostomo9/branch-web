@@ -62,7 +62,7 @@ const StyledLink = styled(Link)`
 
 const Button = styled.button`
   background: var(--pink-theme);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 5px;
   padding: 1rem 1.75rem;
   cursor: pointer;
@@ -75,7 +75,7 @@ const Button = styled.button`
 
   :hover {
     background: #fff;
-    border: 1px solid var(--pink-theme);
+    border: 2px solid var(--pink-theme);
     a {
       color: var(--pink-theme);
     }

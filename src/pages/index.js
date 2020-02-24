@@ -8,6 +8,7 @@ import CurrentBranches from "../components/CurrentBranches/CurrentBranches"
 import HowItWorks from "../components/HowItWorks/HowItWorks"
 import Newsletter from "../components/Newsletter/Newsletter"
 import Recruitment from "../components/Recruitment/Recruitment"
+import Community from "../components/Community/Community"
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <HowItWorks />
     <Newsletter />
     <Recruitment />
+    <Community />
   </Layout>
 )
 

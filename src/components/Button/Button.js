@@ -4,9 +4,10 @@ import styled from "styled-components"
 const Root = styled.button`
   background: none;
   border-radius: 5px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   padding: 1rem 2rem;
   font-weight: 600;
+  cursor: pointer;
 `
 
 const Button = ({ onClick, text, className }) => {

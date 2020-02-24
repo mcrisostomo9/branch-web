@@ -95,11 +95,19 @@ const SingleBenefit = styled.li`
 
 const CtaContainer = styled.div`
   margin-top: 3rem;
+  display: flex;
+  align-items: center;
 `
 
 const FindOutMore = styled(Link)`
   color: var(--dark-theme);
   text-decoration: none;
+  font-weight: 600;
+  margin-left: 3rem;
+
+  :hover {
+    text-decoration: underline;
+  }
 `
 
 const ImgContainer = styled.div`
@@ -161,7 +169,7 @@ const Recruitment = () => {
           </BenefitsContainer>
           <CtaContainer>
             <Button text="apply to join" />
-            <FindOutMore>Find out more</FindOutMore>
+            <FindOutMore>find out more</FindOutMore>
           </CtaContainer>
         </InfoContainer>
         <ImgContainer>
