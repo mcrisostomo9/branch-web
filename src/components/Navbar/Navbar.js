@@ -5,6 +5,8 @@ import styled from "styled-components"
 import logo from "../../images/logo.svg"
 import { mq } from "../../utils/styles"
 import Container from "../Shared/Container"
+import Logo from "../Shared/Logo"
+import Navlink from "../Shared/Navlink"
 
 const Wrapper = styled.header`
   position: absolute;
@@ -19,22 +21,6 @@ const InnerContainer = styled(Container)`
   justify-content: space-between;
 `
 
-const LogoLink = styled(Link)``
-
-const Logo = styled.img`
-  width: 100%;
-  max-width: 150px;
-  height: 100%;
-
-  @media (min-width: ${mq.m768}) {
-    max-width: 175px;
-  }
-
-  @media (min-width: ${mq.m1024}) {
-    max-width: 200px;
-  }
-`
-
 const LinkContainer = styled.ul`
   list-style: none;
   display: none;
@@ -46,17 +32,6 @@ const LinkContainer = styled.ul`
 
   @media (min-width: ${mq.m1024}) {
     display: flex;
-  }
-`
-
-const StyledLink = styled(Link)`
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-
-  :hover {
-    color: var(--pink-theme);
   }
 `
 
@@ -85,21 +60,19 @@ const Button = styled.button`
 const Navbar = () => (
   <Wrapper>
     <InnerContainer as="nav">
-      <LogoLink to="/">
-        <Logo src={logo} alt="branch logo" />
-      </LogoLink>
+      <Logo />
       <LinkContainer>
         <li>
-          <StyledLink to="/">home</StyledLink>
+          <Navlink to="/" text="home" />
         </li>
         <li>
-          <StyledLink to="/page-2">recruitment</StyledLink>
+          <Navlink to="/page-2" text="recruitment" />
         </li>
         <li>
-          <StyledLink to="/">projects</StyledLink>
+          <Navlink to="/page-2" text="projects" />
         </li>
         <li>
-          <StyledLink to="/">how it works</StyledLink>
+          <Navlink to="/page-2" text="how it works" />
         </li>
         <li>
           <Button>

@@ -12,14 +12,18 @@ const Root = styled.div`
 const HeroText = styled(Container)`
   position: relative;
   z-index: 1;
+  padding-top: 8rem;
+
+  @media (min-width: ${mq.m768}) {
+    padding-top: 8rem;
+  }
 
   @media (min-width: ${mq.m1024}) {
-    padding-top: 5rem;
+    padding-top: 12rem;
     padding-bottom: 5rem;
   }
 
   @media (min-width: ${mq.m1440}) {
-    padding-top: 8rem;
     padding-bottom: 8rem;
   }
 
