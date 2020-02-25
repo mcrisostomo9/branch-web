@@ -16,30 +16,59 @@ const Root = styled.footer`
 
 const InnerContainer = styled(Container)`
   display: grid;
-  grid-template-areas: "logo nav social" "copyright newsletter newsletter";
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "logo" "nav" "social" "newsletter" "copyright";
+  justify-content: center;
+  align-items: center;
 
-  grid-gap: 1rem 0;
+  @media (min-width: ${mq.m768}) {
+    grid-template-areas: "logo nav social" "border border border" "copyright newsletter newsletter";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1px 1fr;
+    grid-gap: 1rem 0;
+  }
+`
+
+const Border = styled.div`
+  grid-area: border;
+  border: 0.25px solid #353c47;
 `
 
 const StyledLogo = styled(Logo)`
   grid-area: logo;
   width: fit-content;
+  justify-self: center;
+
+  @media (min-width: ${mq.m768}) {
+    justify-self: flex-start;
+  }
 `
 
 const NavContainer = styled.ul`
+  grid-area: nav;
   list-style: none;
-  display: flex;
+  display: grid;
   align-items: center;
   padding: 0;
-  justify-content: space-around;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+
+  @media (min-width: ${mq.m768}) {
+    grid-gap: 0;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: space-around;
+  }
 `
 
 const SocialContainer = styled.div`
   grid-area: social;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   a {
@@ -52,6 +81,8 @@ const SocialContainer = styled.div`
   }
 
   @media (min-width: ${mq.m768}) {
+    justify-content: flex-end;
+
     a {
       margin: 0 0 0 1.5rem;
     }
@@ -63,13 +94,25 @@ const Copyright = styled.div`
   color: var(--light-gray-text);
   font-size: 0.75rem;
   align-self: center;
+  text-align: center;
+
+  @media (min-width: ${mq.m768}) {
+    text-align: left;
+  }
 `
 
 const Newsletter = styled.div`
   grid-area: newsletter;
   align-self: center;
-  justify-self: flex-end;
+  justify-self: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: ${mq.m768}) {
+    flex-direction: row;
+    justify-self: flex-end;
+  }
 `
 
 const NewsletterText = styled.div`
@@ -86,8 +129,7 @@ const NewsletterText = styled.div`
 `
 
 const Form = styled.form`
-  //margin: auto auto auto 2rem;
-
+  margin-top: 1rem;
   input {
     width: 100%;
     min-width: 250px;
@@ -103,7 +145,10 @@ const Form = styled.form`
     }
   }
 
-  margin-left: 1rem;
+  @media (min-width: ${mq.m768}) {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
 `
 
 const Footer = () => {
@@ -133,6 +178,7 @@ const Footer = () => {
           <SocialIcon social="crunchbase" />
           <SocialIcon social="angellist" />
         </SocialContainer>
+        <Border />
         <Copyright>© branch {new Date().getFullYear()}</Copyright>
         <Newsletter>
           <NewsletterText>
