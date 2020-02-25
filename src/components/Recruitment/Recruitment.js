@@ -9,6 +9,7 @@ import world from "../../images/benefits-world.svg"
 import network from "../../images/benefits-network.svg"
 import people from "../../images/benefits-people.svg"
 import Button from "../Button/Button"
+import StyledLink from "../Shared/StyledLink"
 
 const Root = styled.div`
   background-image: linear-gradient(to right, #e1e2e1 30%, #f8f6f6 0);
@@ -99,15 +100,8 @@ const CtaContainer = styled.div`
   align-items: center;
 `
 
-const FindOutMore = styled(Link)`
-  color: var(--dark-theme);
-  text-decoration: none;
-  font-weight: 600;
+const CtaLink = styled(StyledLink)`
   margin-left: 3rem;
-
-  :hover {
-    text-decoration: underline;
-  }
 `
 
 const ImgContainer = styled.div`
@@ -169,7 +163,7 @@ const Recruitment = () => {
           </BenefitsContainer>
           <CtaContainer>
             <Button text="apply to join" />
-            <FindOutMore>find out more</FindOutMore>
+            <CtaLink text="learn more" color="var(--dark-theme)" />
           </CtaContainer>
         </InfoContainer>
         <ImgContainer>
