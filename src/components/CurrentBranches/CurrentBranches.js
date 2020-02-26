@@ -94,6 +94,8 @@ const CurrentBranches = () => {
   const slidesVisible = width < 1280 ? 1 : 1.6
   const aspectRatio =
     width < 768 ? { height: 100, width: 60 } : { height: 50, width: 100 }
+
+  console.log(`width: ${width}`)
   return (
     <>
       <CarouselProvider

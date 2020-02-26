@@ -41,7 +41,7 @@ const SingleBlog = ({ textHeader }) => {
       <ContentContainer>
         <LatestNews>LATEST NEWS</LatestNews>
         <BlogHeader>{textHeader}</BlogHeader>
-        <StyledLink text="read post" color="var(--dark-text)" />
+        <StyledLink text="read post" color="var(--dark-text)" to="/" />
       </ContentContainer>
     </Root>
   )

@@ -182,7 +182,7 @@ const Footer = () => {
         <Copyright>© branch {new Date().getFullYear()}</Copyright>
         <Newsletter>
           <NewsletterText>
-            <img src={mailIcon} />
+            <img src={mailIcon} alt="mail icon" />
             join the branch newsletter
           </NewsletterText>
           <Form>
