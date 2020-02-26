@@ -20,4 +20,11 @@ export const branches = [
     partnerName: "Bernie Daniels",
     position: "CEO of Venture Stream",
   },
+  {
+    branchName: "warren",
+    tagline: "sanders move money to all corners of the world",
+    label: "president",
+    partnerName: "Bernie Daniels",
+    position: "CEO of Venture Stream",
+  },
 ]
