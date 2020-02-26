@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import ResizeObserver from "resize-observer-polyfill"
 
 // Hook
 export function useWindowSize() {

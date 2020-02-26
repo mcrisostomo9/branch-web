@@ -128,7 +128,7 @@ const CurrentBranches = () => {
             </ButtonContainer>
           </FirstLineContainer>
         </Root>
-        <BranchesContainer>
+        <BranchesContainer {...bind}>
           <Slider>
             {branches.map((branch, index) => (
               <Slide
