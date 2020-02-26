@@ -41,8 +41,8 @@ const BranchName = styled.h3`
   font-size: 1.4rem;
 
   @media (min-width: ${mq.m768}) {
-    font-size: 1.875rem;
-    padding: 2.5rem 2rem;
+    font-size: 1.5rem;
+    //padding: 2.5rem 2rem;
     grid-gap: 2.5rem;
   }
 `
@@ -51,8 +51,8 @@ const Tagline = styled.p`
   color: var(--light-gray-text);
 
   @media (min-width: ${mq.m768}) {
-    font-size: 1.875rem;
-    padding: 2.5rem 2rem;
+    font-size: 1.5rem;
+    //padding: 2.5rem 2rem;
     grid-gap: 2.5rem;
   }
 `
