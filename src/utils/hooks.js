@@ -6,8 +6,8 @@ export function useWindowSize() {
 
   function getSize() {
     return {
-      width: isClient ? window.innerWidth : undefined,
-      height: isClient ? window.innerHeight : undefined,
+      width: window.innerWidth,
+      height: window.innerHeight,
     }
   }
 
