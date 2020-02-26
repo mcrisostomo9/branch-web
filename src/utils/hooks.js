@@ -5,10 +5,9 @@ export function useWindowSize() {
   const isClient = typeof window === "object"
 
   function getSize() {
-    if (!isClient) return undefined
     return {
-      width: window.innerWidth,
-      height: window.innerHeight,
+      width: isClient ? window.innerWidth : undefined,
+      height: isClient ? window.innerHeight : undefined,
     }
   }
 
@@ -18,11 +17,12 @@ export function useWindowSize() {
     if (!isClient) {
       return false
     }
-    console.log(`window size: ${windowSize.width}`)
-    console.log("running on mount")
+
     function handleResize() {
       setWindowSize(getSize())
     }
+    console.log(`window size: ${windowSize.width}`)
+    console.log("running on mount")
 
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
