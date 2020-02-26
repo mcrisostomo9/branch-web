@@ -96,6 +96,8 @@ const CurrentBranches = () => {
     width < 768 ? { height: 100, width: 60 } : { height: 50, width: 100 }
 
   console.log(`width: ${width}`)
+  console.log(`slides vis: ${slidesVisible}`)
+  console.log(`aspect ratio: ${aspectRatio.height}`)
   return (
     <>
       <CarouselProvider
