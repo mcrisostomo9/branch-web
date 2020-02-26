@@ -18,7 +18,7 @@ import Container from "../Shared/Container"
 import Branch from "./Branch"
 import { mq } from "../../utils/styles"
 import { branches } from "../../data/data"
-import { useWindowSize } from "../../utils/hooks"
+import { useMeasure, useWindowSize } from "../../utils/hooks"
 
 const Root = styled(Container)``
 
@@ -90,21 +90,21 @@ const ButtonContainer = styled.div`
 
 const CurrentBranches = () => {
   const { ripple, placeholder } = useStaticQuery(BRANCH_QUERY)
-  const { width } = useWindowSize()
-  const slidesVisible = width < 1280 ? 1 : 1.6
+  // const { width } = useWindowSize()
+  const [bind, { width }] = useMeasure()
+
+  const visibleSlides = width > 768 ? 1.6 : 1
+  // const slidesVisible = width < 1280 ? 1 : 1.6
   const aspectRatio =
     width < 768 ? { height: 100, width: 60 } : { height: 50, width: 100 }
 
-  console.log(`width: ${width}`)
-  console.log(`slides vis: ${slidesVisible}`)
-  console.log(`aspect ratio: ${aspectRatio.height}`)
   return (
     <>
       <CarouselProvider
         naturalSlideHeight={aspectRatio.height}
         naturalSlideWidth={aspectRatio.width}
         totalSlides={branches.length}
-        visibleSlides={slidesVisible}
+        visibleSlides={visibleSlides}
       >
         <Root>
           <FirstLineContainer>
