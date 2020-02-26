@@ -17,7 +17,8 @@ export function useWindowSize() {
     if (!isClient) {
       return false
     }
-
+    console.log(`window size: ${windowSize.width}`)
+    console.log("running on mount")
     function handleResize() {
       setWindowSize(getSize())
     }
