@@ -83,7 +83,7 @@ const SingleCommunity = ({
               />
             </ImgContainer>
             {text && <Text>{text}</Text>}
-            {linkText && <StyledLink text={linkText} color="#fff" />}
+            {linkText && <StyledLink text={linkText} color="#fff" to="/" />}
           </ContentContainer>
         </Container>
       )}

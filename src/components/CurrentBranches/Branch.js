@@ -42,17 +42,22 @@ const BranchName = styled.h3`
 
   @media (min-width: ${mq.m768}) {
     font-size: 1.5rem;
-    //padding: 2.5rem 2rem;
+    grid-gap: 2rem;
+  }
+  @media (min-width: ${mq.m1280}) {
     grid-gap: 2.5rem;
   }
 `
 
 const Tagline = styled.p`
   color: var(--light-gray-text);
+  font-size: 1rem;
 
   @media (min-width: ${mq.m768}) {
-    font-size: 1.5rem;
-    //padding: 2.5rem 2rem;
+    grid-gap: 2rem;
+  }
+
+  @media (min-width: ${mq.m1280}) {
     grid-gap: 2.5rem;
   }
 `
@@ -71,7 +76,12 @@ const ViewButton = styled.button`
   margin-top: 1rem;
 
   @media (min-width: ${mq.m768}) {
-    margin-top: 2rem;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  @media (min-width: ${mq.m1280}) {
+    font-size: 1.25rem;
   }
 `
 
@@ -93,8 +103,15 @@ const InfoText = styled.div`
   @media (min-width: ${mq.m768}) {
     align-items: flex-end;
     position: absolute;
-    right: 180px;
+    right: 150px;
     bottom: 1rem;
+  }
+
+  @media (min-width: ${mq.m1280}) {
+    right: 160px;
+  }
+  @media (min-width: ${mq.m1680}) {
+    right: 180px;
   }
 `
 
@@ -116,6 +133,18 @@ const Photo = styled(Img)`
   position: absolute;
 
   @media (min-width: ${mq.m768}) {
+    height: 100px;
+    width: 100px;
+    right: 1.75rem;
+    bottom: -50px;
+  }
+  @media (min-width: ${mq.m1280}) {
+    height: 120px;
+    width: 120px;
+    right: 1.5rem;
+    bottom: -60px;
+  }
+  @media (min-width: ${mq.m1680}) {
     height: 140px;
     width: 140px;
     right: 1.5rem;

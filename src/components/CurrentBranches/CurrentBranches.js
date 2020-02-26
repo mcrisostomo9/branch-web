@@ -18,6 +18,7 @@ import Container from "../Shared/Container"
 import Branch from "./Branch"
 import { mq } from "../../utils/styles"
 import { branches } from "../../data/data"
+import { useWindowSize } from "../../utils/hooks"
 
 const Root = styled(Container)``
 
@@ -33,10 +34,15 @@ const TextContainer = styled.div`
 
 const BranchesContainer = styled.div`
   width: 100%;
-  padding: 3rem 1rem;
+  padding: 0 1rem;
 
   @media (min-width: ${mq.m768}) {
     padding: 0;
+
+    // for slides spacing
+    .carousel__inner-slide {
+      padding: 0 1.25rem;
+    }
   }
 
   @media (min-width: ${mq.m1440}) {
@@ -47,10 +53,6 @@ const BranchesContainer = styled.div`
     padding-left: 1rem;
     max-width: var(--max-width);
     margin: auto;
-  }
-
-  .carousel__inner-slide {
-    padding: 0 1.25rem;
   }
 `
 
@@ -83,13 +85,17 @@ const ButtonContainer = styled.div`
 
 const CurrentBranches = () => {
   const { ripple, placeholder } = useStaticQuery(BRANCH_QUERY)
+  const { width } = useWindowSize()
+  const slidesVisible = width < 1280 ? 1 : 1.6
+  const aspectRatio =
+    width < 768 ? { height: 100, width: 60 } : { height: 50, width: 100 }
   return (
     <>
       <CarouselProvider
-        naturalSlideHeight={50}
-        naturalSlideWidth={100}
+        naturalSlideHeight={aspectRatio.height}
+        naturalSlideWidth={aspectRatio.width}
         totalSlides={branches.length}
-        visibleSlides={1.5}
+        visibleSlides={slidesVisible}
       >
         <Root>
           <FirstLineContainer>
@@ -116,7 +122,11 @@ const CurrentBranches = () => {
         <BranchesContainer>
           <Slider>
             {branches.map((branch, index) => (
-              <Slide className="slideContainer" index={index}>
+              <Slide
+                className="slideContainer"
+                index={index}
+                key={branch.branchName}
+              >
                 <Branch
                   branch={ripple}
                   placeholder={branch.partnerImg}

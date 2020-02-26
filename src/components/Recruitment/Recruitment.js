@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { mq } from "../../utils/styles"
 import SectionTitle from "../Shared/SectionTitle"
 import dollar from "../../images/benefits-dollar.svg"
@@ -163,7 +163,7 @@ const Recruitment = () => {
           </BenefitsContainer>
           <CtaContainer>
             <Button text="apply to join" />
-            <CtaLink text="learn more" color="var(--dark-theme)" />
+            <CtaLink text="learn more" color="var(--dark-theme)" to="/" />
           </CtaContainer>
         </InfoContainer>
         <ImgContainer>
