@@ -35,6 +35,7 @@ const TextContainer = styled.div`
 const BranchesContainer = styled.div`
   width: 100%;
   padding: 0 1rem;
+  margin: auto;
 
   @media (min-width: ${mq.m768}) {
     padding: 0;
@@ -45,6 +46,10 @@ const BranchesContainer = styled.div`
     }
   }
 
+  @media (min-width: ${mq.m1024}) {
+    width: 90%;
+  }
+
   @media (min-width: ${mq.m1440}) {
     padding-left: 4rem;
   }
@@ -52,7 +57,7 @@ const BranchesContainer = styled.div`
   @media (min-width: ${mq.m1680}) {
     padding-left: 1rem;
     max-width: var(--max-width);
-    margin: auto;
+    width: 100%;
   }
 `
 

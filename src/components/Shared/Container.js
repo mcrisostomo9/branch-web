@@ -13,9 +13,11 @@ const Container = styled.div`
 
   @media (min-width: ${mq.m1024}) {
     padding: 3rem;
+    width: 90%;
   }
 
-  @media (min-width: ${mq.m1440}) {
+  @media (min-width: ${mq.m1680}) {
+    width: 100%;
   }
 `
 

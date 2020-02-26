@@ -39,6 +39,11 @@ const MainContainer = styled.div`
     grid-template-columns: 6fr 4fr;
     grid-gap: 3rem;
     padding: 3rem 5rem;
+    width: 90%;
+  }
+
+  @media (min-width: ${mq.m1680}) {
+    width: 100%;
   }
 `
 
