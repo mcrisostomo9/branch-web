@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react"
 const defaultValues = {
   isBranchOpen: false,
 }
-export const BranchContext = createContext()
+export const BranchContext = createContext(defaultValues)
 
 export const BranchProvider = ({ children }) => {
   const [isBranchOpen, setBranchOpen] = useState(false)
