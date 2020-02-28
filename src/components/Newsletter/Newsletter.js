@@ -100,7 +100,7 @@ const Newsletter = () => {
       <MainContainer>
         <TextContainer>
           <Title>
-            <img src={mailIcon} />
+            <img src={mailIcon} alt="" />
             join the <strong>branch</strong> newsletter
           </Title>
           <Description>

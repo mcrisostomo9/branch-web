@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { mq } from "../../utils/styles"
 import { BranchContext } from "../../context/BranchContext"
 import PartnerInfo from "../Partner/PartnerInfo"
+import ViewCaseStudyButton from "../Shared/ViewCaseStudyButton"
 
 const Root = styled.div`
   position: relative;
@@ -44,47 +45,12 @@ const BranchName = styled.h3`
 
   @media (min-width: ${mq.m768}) {
     font-size: 1.5rem;
-    grid-gap: 2rem;
-  }
-  @media (min-width: ${mq.m1280}) {
-    grid-gap: 2.5rem;
   }
 `
 
 const Tagline = styled.p`
   color: var(--light-gray-text);
   font-size: 1rem;
-
-  @media (min-width: ${mq.m768}) {
-    grid-gap: 2rem;
-  }
-
-  @media (min-width: ${mq.m1280}) {
-    grid-gap: 2.5rem;
-  }
-`
-
-const ViewButton = styled.button`
-  background: none;
-  border: none;
-  align-self: baseline;
-  display: inline-block;
-  font-weight: 700;
-  padding: 0.5rem 0.25rem 0;
-  cursor: pointer;
-  line-height: 0.6;
-  border-bottom: 3px solid var(--pink-theme);
-  font-size: 1.25rem;
-  margin-top: 1rem;
-
-  @media (min-width: ${mq.m768}) {
-    margin-top: 0;
-    font-size: 1rem;
-  }
-
-  @media (min-width: ${mq.m1280}) {
-    font-size: 1.25rem;
-  }
 `
 
 const StyledPartnerInfo = styled(PartnerInfo)`
@@ -145,9 +111,9 @@ const Branch = ({ branch }) => {
       <TextContainer>
         <BranchName>{branch.branchName}</BranchName>
         <Tagline>{branch.tagline}</Tagline>
-        <ViewButton onClick={() => handleClick(branch)}>
+        <ViewCaseStudyButton onClick={() => handleClick(branch)}>
           view case study
-        </ViewButton>
+        </ViewCaseStudyButton>
       </TextContainer>
       <StyledPartnerInfo
         label={branch.partners[0].partnerLabel}

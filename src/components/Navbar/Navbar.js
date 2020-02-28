@@ -8,11 +8,10 @@ import Logo from "../Shared/Logo"
 import Navlink from "../Shared/Navlink"
 
 const Wrapper = styled.header`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
+  ${props =>
+    props.transparent
+      ? " position: absolute; top: 0;  left: 0;  right: 0;  z-index: 10;"
+      : "background: #0d151e"};
 `
 
 const InnerContainer = styled(Container)`
@@ -56,8 +55,8 @@ const Button = styled.button`
   }
 `
 
-const Navbar = () => (
-  <Wrapper>
+const Navbar = ({ className, transparent }) => (
+  <Wrapper className={className} transparent={transparent}>
     <InnerContainer as="nav">
       <Logo />
       <LinkContainer>
@@ -68,7 +67,7 @@ const Navbar = () => (
           <Navlink to="/page-2" text="recruitment" />
         </li>
         <li>
-          <Navlink to="/page-2" text="projects" />
+          <Navlink to="/projects" text="projects" />
         </li>
         <li>
           <Navlink to="/page-2" text="how it works" />

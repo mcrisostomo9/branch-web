@@ -6,6 +6,7 @@ import SectionTitle from "../Shared/SectionTitle"
 import { mq } from "../../utils/styles"
 import SectionSubtitle from "../Shared/SectionSubtitle"
 import Container from "../Shared/Container"
+import { useInView } from "react-intersection-observer"
 
 const Root = styled(Container)`
   display: grid;
@@ -32,8 +33,13 @@ const TextContainer = styled.div`
 
 const What = () => {
   const { whatImg } = useStaticQuery(WHAT_QUERY)
+  const [ref, inView, entry] = useInView({
+    rootMargin: "-50% 0px",
+  })
+  console.log(inView)
+  console.log(entry)
   return (
-    <Root>
+    <Root ref={ref}>
       <TextContainer>
         <SectionTitle color="var(--dark-theme)" text="what is branch?" />
         <SectionSubtitle

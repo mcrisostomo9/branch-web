@@ -1,10 +1,8 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Hero from "../components/Hero/Hero"
-import What from "../components/What/What"
-import CurrentBranches from "../components/CurrentBranches/CurrentBranches"
 import HowItWorks from "../components/HowItWorks/HowItWorks"
 import Newsletter from "../components/Newsletter/Newsletter"
 import Recruitment from "../components/Recruitment/Recruitment"
@@ -12,25 +10,21 @@ import Community from "../components/Community/Community"
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import { BranchContext } from "../context/BranchContext"
-import { graphql } from "gatsby"
+import CurrentBranchesProjects from "../components/CurrentBranches/CurrentBranchesProjects"
 
 const StyledLayout = styled(Layout)`
   position: relative;
 `
 
-const IndexPage = props => {
+const ProjectsPage = props => {
   const { isBranchOpen } = useContext(BranchContext)
   const { allSanityBranch } = props.data
   return (
     <StyledLayout isBranchOpen={isBranchOpen}>
-      <SEO title="Home" />
-      <Navbar transparent />
-      <Hero />
-      <What />
-      <CurrentBranches branches={allSanityBranch} />
-      <HowItWorks />
+      <SEO title="Projects" />
+      <Navbar />
+      <CurrentBranchesProjects branches={allSanityBranch} />
       <Newsletter />
-      <Recruitment />
       <Community />
       <Footer />
       {/*<AnimatePresence>*/}
@@ -47,10 +41,10 @@ const IndexPage = props => {
   )
 }
 
-export default IndexPage
+export default ProjectsPage
 
-export const INDEX_QUERY = graphql`
-  query indexQuery {
+export const PROJECTS_QUERY = graphql`
+  query projectsQuery {
     allSanityBranch {
       edges {
         node {
