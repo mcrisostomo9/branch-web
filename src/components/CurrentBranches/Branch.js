@@ -133,9 +133,7 @@ const Photo = styled(Img)`
 `
 
 const Branch = ({ branch }) => {
-  const { toggleBranchOpen, setViewedBranch, viewedBranch } = useContext(
-    BranchContext
-  )
+  const { toggleBranchOpen, setViewedBranch } = useContext(BranchContext)
 
   const handleClick = b => {
     setViewedBranch(b)
