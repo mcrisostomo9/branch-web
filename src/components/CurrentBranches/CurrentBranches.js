@@ -1,8 +1,6 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
-
 import {
   CarouselProvider,
   Slide,
@@ -16,9 +14,11 @@ import SectionTitle from "../Shared/SectionTitle"
 import SectionSubtitle from "../Shared/SectionSubtitle"
 import Container from "../Shared/Container"
 import Branch from "./Branch"
+import BranchFull from "../BranchFull/BranchFull"
 import { mq } from "../../utils/styles"
-import { branches } from "../../data/data"
-import { useMeasure, useWindowSize } from "../../utils/hooks"
+import { useMeasure } from "../../utils/hooks"
+import { BranchContext } from "../../context/BranchContext"
+import { AnimatePresence } from "framer-motion"
 
 const Root = styled(Container)``
 
@@ -88,22 +88,20 @@ const ButtonContainer = styled.div`
   }
 `
 
-const CurrentBranches = () => {
-  const { ripple, placeholder } = useStaticQuery(BRANCH_QUERY)
-  // const { width } = useWindowSize()
+const CurrentBranches = ({ branches }) => {
   const [bind, { width }] = useMeasure()
-
   const visibleSlides = width > 768 ? 1.6 : 1
-  // const slidesVisible = width < 1280 ? 1 : 1.6
   const aspectRatio =
-    width < 768 ? { height: 100, width: 60 } : { height: 50, width: 100 }
-
+    width > 768 ? { height: 50, width: 100 } : { height: 100, width: 60 }
+  const { isBranchOpen, toggleBranchOpen, viewedBranch } = useContext(
+    BranchContext
+  )
   return (
     <>
       <CarouselProvider
         naturalSlideHeight={aspectRatio.height}
         naturalSlideWidth={aspectRatio.width}
-        totalSlides={branches.length}
+        totalSlides={branches.edges.length}
         visibleSlides={visibleSlides}
       >
         <Root>
@@ -130,49 +128,29 @@ const CurrentBranches = () => {
         </Root>
         <BranchesContainer {...bind}>
           <Slider>
-            {branches.map((branch, index) => (
+            {branches.edges.map((branch, index) => (
               <Slide
                 className="slideContainer"
                 index={index}
-                key={branch.branchName}
+                key={branch.node.branchName}
               >
-                <Branch
-                  branch={ripple}
-                  placeholder={branch.partnerImg}
-                  mainImg={ripple}
-                  branchName={branch.branchName}
-                  tagline={branch.tagline}
-                  label={branch.label}
-                  partnerName={branch.partnerName}
-                  position={branch.position}
-                  partnerImg={placeholder}
-                />
+                <Branch branch={branch.node} isBranchOpen={isBranchOpen} />
               </Slide>
             ))}
           </Slider>
         </BranchesContainer>
       </CarouselProvider>
+      <AnimatePresence>
+        {isBranchOpen && (
+          <BranchFull
+            branch={viewedBranch}
+            isBranchOpen={isBranchOpen}
+            toggleBranchOpen={toggleBranchOpen}
+          />
+        )}
+      </AnimatePresence>
     </>
   )
 }
 
 export default CurrentBranches
-
-export const BRANCH_QUERY = graphql`
-  query BranchQuery {
-    ripple: file(relativePath: { eq: "ripple.png" }) {
-      childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-    placeholder: file(relativePath: { eq: "placeholder.png" }) {
-      childImageSharp {
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-  }
-`

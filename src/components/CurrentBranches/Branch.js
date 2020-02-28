@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { mq } from "../../utils/styles"
+import { BranchContext } from "../../context/BranchContext"
+import PartnerInfo from "../Partner/PartnerInfo"
 
 const Root = styled.div`
   position: relative;
@@ -85,19 +87,7 @@ const ViewButton = styled.button`
   }
 `
 
-const Label = styled.label`
-  font-size: 0.5rem;
-  background: #fcba3b;
-  border-radius: 5px;
-  font-weight: 600;
-  padding: 0.25rem;
-`
-
-const InfoText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+const StyledPartnerInfo = styled(PartnerInfo)`
   margin-top: 1rem;
 
   @media (min-width: ${mq.m768}) {
@@ -113,16 +103,6 @@ const InfoText = styled.div`
   @media (min-width: ${mq.m1680}) {
     right: 180px;
   }
-`
-
-const PartnerName = styled.span`
-  font-weight: 600;
-  margin-top: 0.5rem;
-`
-
-const Position = styled.span`
-  color: var(--light-gray-text);
-  font-size: 0.75rem;
 `
 
 const Photo = styled(Img)`
@@ -152,30 +132,32 @@ const Photo = styled(Img)`
   }
 `
 
-const Branch = ({
-  mainImg,
-  branchName,
-  tagline,
-  label,
-  partnerName,
-  position,
-  partnerImg,
-}) => {
+const Branch = ({ branch }) => {
+  const { toggleBranchOpen, setViewedBranch, viewedBranch } = useContext(
+    BranchContext
+  )
+
+  const handleClick = b => {
+    setViewedBranch(b)
+    toggleBranchOpen()
+  }
   return (
     <Root>
-      <Img fluid={mainImg.childImageSharp.fluid} />
+      <Img fluid={branch.previewImg.asset.fluid} />
       <TextContainer>
-        <BranchName>{branchName}</BranchName>
-        <Tagline>{tagline}</Tagline>
-        <ViewButton>view case study</ViewButton>
+        <BranchName>{branch.branchName}</BranchName>
+        <Tagline>{branch.tagline}</Tagline>
+        <ViewButton onClick={() => handleClick(branch)}>
+          view case study
+        </ViewButton>
       </TextContainer>
-      <InfoText>
-        <Label>{label}</Label>
-        <PartnerName>{partnerName}</PartnerName>
-        <Position>{position}</Position>
-      </InfoText>
+      <StyledPartnerInfo
+        label={branch.partners[0].partnerLabel}
+        partnerName={branch.partners[0].partnerName}
+        position={branch.partners[0].partnerPosition}
+      />
       <Photo
-        fluid={partnerImg.childImageSharp.fluid}
+        fluid={branch.partners[0].partnerImg.asset.fluid}
         style={{ position: "absolute" }}
       />
     </Root>

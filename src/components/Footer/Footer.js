@@ -171,12 +171,12 @@ const Footer = () => {
           </li>
         </NavContainer>
         <SocialContainer>
-          <SocialIcon social="twitter" />
-          <SocialIcon social="facebook" />
-          <SocialIcon social="instagram" />
-          <SocialIcon social="linkedin" />
-          <SocialIcon social="crunchbase" />
-          <SocialIcon social="angellist" />
+          <SocialIcon isWhite social="twitter" />
+          <SocialIcon isWhite social="facebook" />
+          <SocialIcon isWhite social="instagram" />
+          <SocialIcon isWhite social="linkedin" />
+          <SocialIcon isWhite social="crunchbase" />
+          <SocialIcon isWhite social="angellist" />
         </SocialContainer>
         <Border />
         <Copyright>© branch {new Date().getFullYear()}</Copyright>

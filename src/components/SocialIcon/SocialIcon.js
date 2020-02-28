@@ -45,7 +45,7 @@ const Crunchbase = () => (
 
 const Root = styled.a`
   cursor: pointer;
-  color: #fff;
+  color: ${props => (props.isWhite ? "#fff" : "#000")};
 
   svg {
     width: 20px;
@@ -61,7 +61,7 @@ const Root = styled.a`
   }
 `
 
-const SocialIcon = ({ social, className, link }) => {
+const SocialIcon = ({ social, className, link, isWhite }) => {
   const renderSocial = social => {
     switch (social) {
       case "facebook":
@@ -81,7 +81,7 @@ const SocialIcon = ({ social, className, link }) => {
     }
   }
   return (
-    <Root className={className} href={link} target="_blank">
+    <Root className={className} href={link} target="_blank" isWhite={isWhite}>
       {renderSocial(social)}
     </Root>
   )

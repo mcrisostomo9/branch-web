@@ -1,15 +1,14 @@
 import React from "react"
 
 import "./layout.css"
-import Navbar from "./Navbar/Navbar"
-import Footer from "./Footer/Footer"
+import styled from "styled-components"
 
-const Layout = ({ children }) => {
+const StyledMain = styled.main``
+
+const Layout = ({ className, children }) => {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
+      <StyledMain className={className}>{children}</StyledMain>
     </>
   )
 }
