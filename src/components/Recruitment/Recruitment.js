@@ -10,25 +10,26 @@ import network from "../../images/benefits-network.svg"
 import people from "../../images/benefits-people.svg"
 import Button from "../Button/Button"
 import StyledLink from "../Shared/StyledLink"
+import Container from "../Shared/Container"
 
 const Root = styled.div`
   background-image: linear-gradient(to right, #e1e2e1 30%, #f8f6f6 0);
   background-color: #e1e2e1;
-  padding: 5rem 1rem;
+  padding: 5rem 0;
 
   @media (min-width: ${mq.m768}) {
-    padding: 3rem 2rem;
+    padding: 3rem 0;
   }
 
   @media (min-width: ${mq.m1024}) {
-    padding: 6rem 3rem;
+    padding: 6rem 0;
   }
 `
 
 const MainContainer = styled.div`
   width: 100%;
-  max-width: var(--max-width);
-  margin: auto;
+  //max-width: var(--max-width);
+  //margin: auto;
   background: #fff;
   border-radius: 10px;
   display: grid;
@@ -39,11 +40,11 @@ const MainContainer = styled.div`
     grid-template-columns: 6fr 4fr;
     grid-gap: 3rem;
     padding: 3rem 5rem;
-    width: 90%;
+    //width: 90%;
   }
 
   @media (min-width: ${mq.m1680}) {
-    width: 100%;
+    //width: 100%;
   }
 `
 
@@ -130,51 +131,54 @@ const Recruitment = () => {
   const { recruitmentImg } = useStaticQuery(RECRUITMENT_QUERY)
   return (
     <Root>
-      <MainContainer>
-        <InfoContainer>
-          <SectionTitle text="recruitment" color="var(--dark-theme)" />
-          <RecruitmentSubtitle>
-            join <span>branch</span> & benefit from success
-          </RecruitmentSubtitle>
-          <Description>
-            our operators and implementors share a stake in the bussinesses they
-            help shape Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea com eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quimodo consequat.
-            Duis aute irure dolor in reprehenderit in.
-          </Description>
-          <BenefitsContainer>
-            <BranchBenefits>branch benefits</BranchBenefits>
-            <BenefitsList>
-              <SingleBenefit>
-                <img src={world} alt="" />
-                <span>work on world class projects</span>
-              </SingleBenefit>
-              <SingleBenefit>
-                <img src={people} alt="" />
-                <span>experienced & successful team</span>
-              </SingleBenefit>
-              <SingleBenefit>
-                <img src={network} alt="" />
-                <span>great projects find you!</span>
-              </SingleBenefit>
-              <SingleBenefit>
-                <img src={dollar} alt="" />
-                <span>join the creative capital fund</span>
-              </SingleBenefit>
-            </BenefitsList>
-          </BenefitsContainer>
-          <CtaContainer>
-            <Button text="apply to join" />
-            <CtaLink text="learn more" color="var(--dark-theme)" to="/" />
-          </CtaContainer>
-        </InfoContainer>
-        <ImgContainer>
-          <StyledImg fluid={recruitmentImg.childImageSharp.fluid} />
-        </ImgContainer>
-      </MainContainer>
+      <Container>
+        <MainContainer>
+          <InfoContainer>
+            <SectionTitle text="recruitment" color="var(--dark-theme)" />
+            <RecruitmentSubtitle>
+              join <span>branch</span> & benefit from success
+            </RecruitmentSubtitle>
+            <Description>
+              our operators and implementors share a stake in the bussinesses
+              they help shape Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip ex ea com eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quimodo consequat. Duis aute irure dolor in
+              reprehenderit in.
+            </Description>
+            <BenefitsContainer>
+              <BranchBenefits>branch benefits</BranchBenefits>
+              <BenefitsList>
+                <SingleBenefit>
+                  <img src={world} alt="" />
+                  <span>work on world class projects</span>
+                </SingleBenefit>
+                <SingleBenefit>
+                  <img src={people} alt="" />
+                  <span>experienced & successful team</span>
+                </SingleBenefit>
+                <SingleBenefit>
+                  <img src={network} alt="" />
+                  <span>great projects find you!</span>
+                </SingleBenefit>
+                <SingleBenefit>
+                  <img src={dollar} alt="" />
+                  <span>join the creative capital fund</span>
+                </SingleBenefit>
+              </BenefitsList>
+            </BenefitsContainer>
+            <CtaContainer>
+              <Button text="apply to join" />
+              <CtaLink text="learn more" color="var(--dark-theme)" to="/" />
+            </CtaContainer>
+          </InfoContainer>
+          <ImgContainer>
+            <StyledImg fluid={recruitmentImg.childImageSharp.fluid} />
+          </ImgContainer>
+        </MainContainer>
+      </Container>
     </Root>
   )
 }
