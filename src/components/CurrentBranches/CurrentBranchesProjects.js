@@ -35,7 +35,11 @@ const CurrentBranchesProjects = ({ branches }) => {
         />
         <BranchContainer>
           {branches.edges.map((branch, index) => (
-            <BranchProject branch={branch.node} isBranchOpen={isBranchOpen} />
+            <BranchProject
+              key={branch.node._id}
+              branch={branch.node}
+              isBranchOpen={isBranchOpen}
+            />
           ))}
         </BranchContainer>
       </Container>

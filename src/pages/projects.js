@@ -3,14 +3,13 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HowItWorks from "../components/HowItWorks/HowItWorks"
 import Newsletter from "../components/Newsletter/Newsletter"
-import Recruitment from "../components/Recruitment/Recruitment"
 import Community from "../components/Community/Community"
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import { BranchContext } from "../context/BranchContext"
 import CurrentBranchesProjects from "../components/CurrentBranches/CurrentBranchesProjects"
+import ApplyToBranch from "../components/ApplyToBranch/ApplyToBranch"
 
 const StyledLayout = styled(Layout)`
   position: relative;
@@ -24,6 +23,7 @@ const ProjectsPage = props => {
       <SEO title="Projects" />
       <Navbar />
       <CurrentBranchesProjects branches={allSanityBranch} />
+      <ApplyToBranch />
       <Newsletter />
       <Community />
       <Footer />
@@ -48,6 +48,7 @@ export const PROJECTS_QUERY = graphql`
     allSanityBranch {
       edges {
         node {
+          _id
           branchName
           url
           logo {
@@ -61,14 +62,14 @@ export const PROJECTS_QUERY = graphql`
           previewImg {
             asset {
               fluid {
-                ...GatsbySanityImageFluid
+                ...GatsbySanityImageFluid_noBase64
               }
             }
           }
           mainImg {
             asset {
               fluid {
-                ...GatsbySanityImageFluid
+                ...GatsbySanityImageFluid_noBase64
               }
             }
           }
@@ -82,7 +83,7 @@ export const PROJECTS_QUERY = graphql`
             partnerImg {
               asset {
                 fluid {
-                  ...GatsbySanityImageFluid
+                  ...GatsbySanityImageFluid_noBase64
                 }
               }
             }

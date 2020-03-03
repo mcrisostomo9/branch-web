@@ -32,7 +32,6 @@ const TextContainer = styled.div`
   padding: 0 1rem;
 
   @media (min-width: ${mq.m768}) {
-    margin-top: 0;
     padding: 0 2rem;
   }
 `
@@ -89,11 +88,14 @@ const BranchProject = ({ branch }) => {
     setViewedBranch(b)
     toggleBranchOpen()
   }
-
+  console.log(branch)
   return (
     <Root>
       <ImgContainer>
-        <Img fluid={branch.previewImg.asset.fluid} />
+        <Img
+          fluid={branch.previewImg.asset.fluid}
+          backgroundColor={branch.color.hex}
+        />
       </ImgContainer>
       <TextContainer>
         <BranchName>{branch.branchName}</BranchName>

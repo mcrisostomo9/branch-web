@@ -132,7 +132,7 @@ const CurrentBranches = ({ branches }) => {
               <Slide
                 className="slideContainer"
                 index={index}
-                key={branch.node.branchName}
+                key={branch.node._id}
               >
                 <Branch branch={branch.node} isBranchOpen={isBranchOpen} />
               </Slide>

@@ -107,7 +107,10 @@ const Branch = ({ branch }) => {
   }
   return (
     <Root>
-      <Img fluid={branch.previewImg.asset.fluid} />
+      <Img
+        fluid={branch.previewImg.asset.fluid}
+        backgroundColor={branch.color.hex}
+      />
       <TextContainer>
         <BranchName>{branch.branchName}</BranchName>
         <Tagline>{branch.tagline}</Tagline>

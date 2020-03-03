@@ -36,8 +36,8 @@ const What = () => {
   const [ref, inView, entry] = useInView({
     rootMargin: "-50% 0px",
   })
-  console.log(inView)
-  console.log(entry)
+  // console.log(inView)
+  // console.log(entry)
   return (
     <Root ref={ref}>
       <TextContainer>

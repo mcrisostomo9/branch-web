@@ -54,6 +54,7 @@ export const INDEX_QUERY = graphql`
     allSanityBranch {
       edges {
         node {
+          _id
           branchName
           url
           logo {
@@ -67,14 +68,14 @@ export const INDEX_QUERY = graphql`
           previewImg {
             asset {
               fluid {
-                ...GatsbySanityImageFluid
+                ...GatsbySanityImageFluid_noBase64
               }
             }
           }
           mainImg {
             asset {
               fluid {
-                ...GatsbySanityImageFluid
+                ...GatsbySanityImageFluid_noBase64
               }
             }
           }
@@ -88,7 +89,7 @@ export const INDEX_QUERY = graphql`
             partnerImg {
               asset {
                 fluid {
-                  ...GatsbySanityImageFluid
+                  ...GatsbySanityImageFluid_noBase64
                 }
               }
             }

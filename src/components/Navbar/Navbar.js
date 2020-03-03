@@ -3,7 +3,6 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { mq } from "../../utils/styles"
-import Container from "../Shared/Container"
 import Logo from "../Shared/Logo"
 import Navlink from "../Shared/Navlink"
 
@@ -14,9 +13,27 @@ const Wrapper = styled.header`
       : "background: #0d151e"};
 `
 
-const InnerContainer = styled(Container)`
+const InnerContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+
+  @media (min-width: ${mq.m768}) {
+    padding: 1rem 2rem;
+  }
+
+  @media (min-width: ${mq.m1024}) {
+    padding: 1rem 3rem;
+    width: 90%;
+  }
+
+  @media (min-width: ${mq.m1680}) {
+    width: 100%;
+  }
 `
 
 const LinkContainer = styled.ul`

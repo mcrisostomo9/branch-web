@@ -98,7 +98,7 @@ export const HERO_QUERY = graphql`
     hero: file(relativePath: { eq: "hero.png" }) {
       childImageSharp {
         fluid(quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
