@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer"
 import RecruitmentHeader from "../components/RecruitmentHeader/RecruitmentHeader"
 import TalentPool from "../components/TalentPool/TalentPool"
 import BranchBenefits from "../components/BranchBenefits/BranchBenefits"
+import CurrentOpenings from "../components/CurrentOpenings/CurrentOpenings"
 
 const RecruitmentPage = props => {
   return (
@@ -15,6 +16,7 @@ const RecruitmentPage = props => {
       <RecruitmentHeader />
       <TalentPool />
       <BranchBenefits />
+      <CurrentOpenings />
       <Footer />
     </Layout>
   )
