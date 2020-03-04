@@ -81,7 +81,7 @@ const Navbar = ({ className, transparent }) => (
           <Navlink to="/" text="home" />
         </li>
         <li>
-          <Navlink to="/page-2" text="recruitment" />
+          <Navlink to="/recruitment" text="recruitment" />
         </li>
         <li>
           <Navlink to="/projects" text="projects" />

@@ -158,16 +158,16 @@ const Footer = () => {
         <StyledLogo />
         <NavContainer>
           <li>
-            <Navlink to="/page-2" text="recruitment" />
+            <Navlink to="/recruitment" text="recruitment" />
           </li>
           <li>
-            <Navlink to="/page-2" text="projects" />
+            <Navlink to="/projects" text="projects" />
           </li>
           <li>
             <Navlink to="/page-2" text="how it works" />
           </li>
           <li>
-            <Navlink to="/page-2" text="apply now" />
+            <Navlink to="/apply" text="apply now" />
           </li>
         </NavContainer>
         <SocialContainer>

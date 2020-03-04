@@ -5,8 +5,6 @@ import Img from "gatsby-image"
 import Container from "../Shared/Container"
 import SectionHeader from "../Shared/SectionHeader"
 
-const Root = styled(Container)``
-
 const StyledImg = styled(Img)`
   margin-top: 3rem;
 `
@@ -14,14 +12,14 @@ const StyledImg = styled(Img)`
 const HowItWorks = () => {
   const { howImg } = useStaticQuery(HOW_IT_WORKS_QUERY)
   return (
-    <Root>
+    <Container>
       <SectionHeader
         title="how it works"
         subtitle="our process is unique, tried and tested!"
         color="var(--light-theme)"
       />
       <StyledImg fluid={howImg.childImageSharp.fluid} />
-    </Root>
+    </Container>
   )
 }
 
