@@ -31,6 +31,7 @@ const LeftContainer = styled.div`
   img {
     width: 50px;
     height: auto;
+    max-height: 50px;
   }
 `
 
@@ -38,7 +39,8 @@ const InfoContainer = styled.div`
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  font-size: 0.875rem;
 `
 
 const Position = styled.div`
@@ -46,6 +48,13 @@ const Position = styled.div`
 `
 
 const Location = styled.div``
+
+const ApplyButton = styled(Button)`
+  align-self: center;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  background: #fff;
+`
 
 const CompanyOpenings = ({ company: { offers, logo, companyName } }) => {
   return (
@@ -64,7 +73,7 @@ const CompanyOpenings = ({ company: { offers, logo, companyName } }) => {
                   <Location>{offer.positionLocation}</Location>
                 </InfoContainer>
               </LeftContainer>
-              <Button text="view offer" />
+              <ApplyButton text="view offer" />
             </Opening>
           )
         })}
