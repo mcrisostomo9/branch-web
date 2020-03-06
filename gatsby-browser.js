@@ -1,6 +1,4 @@
 import React from "react"
-import { BranchProvider } from "./src/context/BranchContext"
+import { Provider } from "./src/context/Context"
 
-export const wrapRootElement = ({ element }) => (
-  <BranchProvider>{element}</BranchProvider>
-)
+export const wrapRootElement = ({ element }) => <Provider>{element}</Provider>

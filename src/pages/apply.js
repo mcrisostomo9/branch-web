@@ -1,16 +1,15 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Shared/layout"
 import SEO from "../components/seo"
-import Navbar from "../components/Navbar/Navbar"
-import Footer from "../components/Footer/Footer"
+import Header from "../components/ApplyComponents/Header"
+import Application from "../components/ApplyComponents/Application"
 
-const ApplyPage = props => {
+const ApplyPage = () => {
   return (
     <Layout>
       <SEO title="Apply" />
-      <Navbar />
-      <div>apply page</div>
-      <Footer />
+      <Header />
+      <Application />
     </Layout>
   )
 }

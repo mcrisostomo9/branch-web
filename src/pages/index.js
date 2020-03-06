@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
-import Layout from "../components/layout"
+import Layout from "../components/Shared/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Hero/Hero"
 import What from "../components/What/What"
@@ -11,7 +11,7 @@ import Recruitment from "../components/Recruitment/Recruitment"
 import Community from "../components/Community/Community"
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
-import { BranchContext } from "../context/BranchContext"
+import { Context } from "../context/Context"
 import { graphql } from "gatsby"
 
 const StyledLayout = styled(Layout)`
@@ -19,7 +19,7 @@ const StyledLayout = styled(Layout)`
 `
 
 const IndexPage = props => {
-  const { isBranchOpen } = useContext(BranchContext)
+  const { isBranchOpen } = useContext(Context)
   const { allSanityBranch } = props.data
   return (
     <StyledLayout isBranchOpen={isBranchOpen}>

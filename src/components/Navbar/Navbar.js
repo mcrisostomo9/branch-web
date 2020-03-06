@@ -50,25 +50,20 @@ const LinkContainer = styled.ul`
   }
 `
 
-const Button = styled.button`
+const ApplyLink = styled(Link)`
   background: var(--pink-theme);
   border: 2px solid transparent;
   border-radius: 5px;
   padding: 1rem 1.75rem;
   cursor: pointer;
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-  }
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
 
   :hover {
     background: #fff;
     border: 2px solid var(--pink-theme);
-    a {
-      color: var(--pink-theme);
-    }
+    color: var(--pink-theme);
   }
 `
 
@@ -90,9 +85,7 @@ const Navbar = ({ className, transparent }) => (
           <Navlink to="/page-2" text="how it works" />
         </li>
         <li>
-          <Button>
-            <Link to="/apply">apply now</Link>
-          </Button>
+          <ApplyLink to="/apply">apply now</ApplyLink>
         </li>
       </LinkContainer>
       {/*TODO revisit mobile container*/}

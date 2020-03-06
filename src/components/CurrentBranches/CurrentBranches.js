@@ -17,7 +17,7 @@ import Branch from "./Branch"
 import BranchFull from "../BranchFull/BranchFull"
 import { mq } from "../../utils/styles"
 import { useMeasure } from "../../utils/hooks"
-import { BranchContext } from "../../context/BranchContext"
+import { Context } from "../../context/Context"
 import { AnimatePresence } from "framer-motion"
 
 const Root = styled(Container)``
@@ -93,9 +93,7 @@ const CurrentBranches = ({ branches }) => {
   const visibleSlides = width > 768 ? 1.6 : 1
   const aspectRatio =
     width > 768 ? { height: 50, width: 100 } : { height: 100, width: 60 }
-  const { isBranchOpen, toggleBranchOpen, viewedBranch } = useContext(
-    BranchContext
-  )
+  const { isBranchOpen, viewedBranch, dispatch } = useContext(Context)
   return (
     <>
       <CarouselProvider
@@ -145,7 +143,7 @@ const CurrentBranches = ({ branches }) => {
           <BranchFull
             branch={viewedBranch}
             isBranchOpen={isBranchOpen}
-            toggleBranchOpen={toggleBranchOpen}
+            dispatch={dispatch}
           />
         )}
       </AnimatePresence>

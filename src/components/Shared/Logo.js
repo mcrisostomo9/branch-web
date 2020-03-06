@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import logo from "../../images/logo.svg"
+import logoBlack from "../../images/logo-black.svg"
 import { mq } from "../../utils/styles"
 
 const LogoLink = styled(Link)`
@@ -20,9 +21,9 @@ const LogoLink = styled(Link)`
   }
 `
 
-const Logo = ({ className }) => (
+const Logo = ({ className, isBlack }) => (
   <LogoLink to="/" className={className}>
-    <img src={logo} alt="branch logo" />
+    <img src={isBlack ? logoBlack : logo} alt="branch logo" />
   </LogoLink>
 )
 

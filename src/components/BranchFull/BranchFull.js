@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import PartnerInfo from "../Partner/PartnerInfo"
 import SocialIcon from "../SocialIcon/SocialIcon"
 import { mq } from "../../utils/styles"
+import { CLOSE_BRANCH } from "../../context/reducer"
 
 const Root = styled(motion.div)`
   position: fixed;
@@ -169,10 +170,14 @@ const BranchFull = ({
     bulletPoints,
     partners,
   },
-  toggleBranchOpen,
+  dispatch,
   isBranchOpen,
 }) => {
   const node = useRef()
+
+  const toggleBranchOpen = () => {
+    dispatch({ type: CLOSE_BRANCH })
+  }
 
   const handleClickOutside = useCallback(
     e => {

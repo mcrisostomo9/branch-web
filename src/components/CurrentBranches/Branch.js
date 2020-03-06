@@ -2,9 +2,10 @@ import React, { useContext } from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { mq } from "../../utils/styles"
-import { BranchContext } from "../../context/BranchContext"
+import { Context } from "../../context/Context"
 import PartnerInfo from "../Partner/PartnerInfo"
 import ViewCaseStudyButton from "../Shared/ViewCaseStudyButton"
+import { VIEW_BRANCH } from "../../context/reducer"
 
 const Root = styled.div`
   position: relative;
@@ -99,11 +100,10 @@ const Photo = styled(Img)`
 `
 
 const Branch = ({ branch }) => {
-  const { toggleBranchOpen, setViewedBranch } = useContext(BranchContext)
+  const { dispatch } = useContext(Context)
 
   const handleClick = b => {
-    setViewedBranch(b)
-    toggleBranchOpen()
+    dispatch({ type: VIEW_BRANCH, branch: b })
   }
   return (
     <Root>

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import Container from "../Shared/Container"
 import BranchFull from "../BranchFull/BranchFull"
-import { BranchContext } from "../../context/BranchContext"
+import { Context } from "../../context/Context"
 import { AnimatePresence } from "framer-motion"
 import SectionHeader from "../Shared/SectionHeader"
 import { mq } from "../../utils/styles"
@@ -22,9 +22,7 @@ const BranchContainer = styled.div`
 `
 
 const CurrentBranchesProjects = ({ branches }) => {
-  const { isBranchOpen, toggleBranchOpen, viewedBranch } = useContext(
-    BranchContext
-  )
+  const { isBranchOpen, dispatch, viewedBranch } = useContext(Context)
   return (
     <>
       <Container>
@@ -48,7 +46,7 @@ const CurrentBranchesProjects = ({ branches }) => {
           <BranchFull
             branch={viewedBranch}
             isBranchOpen={isBranchOpen}
-            toggleBranchOpen={toggleBranchOpen}
+            dispatch={dispatch}
           />
         )}
       </AnimatePresence>
