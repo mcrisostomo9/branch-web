@@ -156,7 +156,7 @@ const Prequalification = ({ state, dispatch }) => {
       </QuestionContainer>
     )
   }
-  console.log(state.steps)
+
   return (
     <ContentContainer>
       <TextContainer>

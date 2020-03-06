@@ -1,3 +1,5 @@
+import { initialState } from "./Context"
+
 export const TOGGLE_QUALIFY = "TOGGLE_QUALIFY"
 export const COMPLETE_STEP = "COMPLETE_STEP"
 export const COMPLETE_QUALIFICATION = "COMPLETE_QUALIFICATION"
@@ -7,52 +9,10 @@ export const RESET_APPLICATION = "RESET_APPLICATION"
 export const VIEW_BRANCH = "VIEW_BRANCH"
 export const CLOSE_BRANCH = "CLOSE_BRANCH"
 
-export const initialValues = {
-  isBranchOpen: false,
-  viewedBranch: null,
-  isQualified: false,
-  activeStep: 1,
-  steps: [
-    {
-      stepNumber: 1,
-      stepIsQualified: true,
-      complete: false,
-      question: "Are you the CEO, or decision maker at the company?",
-      nonQualifiedMessage:
-        "sorry, as branch likes to move fast, we need to work directly with CEOs.",
-    },
-    {
-      stepNumber: 2,
-      stepIsQualified: true,
-      complete: false,
-      question: "Does your company currently have over 100 employees?",
-      nonQualifiedMessage:
-        "sorry, as branch likes to move fast, we need to work directly with CEOs.",
-    },
-    {
-      stepNumber: 3,
-      stepIsQualified: true,
-      complete: false,
-      question: "Are you looking for a design/dev agency?",
-      nonQualifiedMessage:
-        "sorry, as branch likes to move fast, we need to work directly with CEOs.",
-    },
-    {
-      stepNumber: 4,
-      stepIsQualified: true,
-      complete: false,
-      question: "Are you ready to supercharge your company?",
-      nonQualifiedMessage:
-        "sorry, as branch likes to move fast, we need to work directly with CEOs.",
-    },
-  ],
-  applicationSubmitted: false,
-}
-
 export const reducer = (state, action) => {
   switch (action.type) {
     case RESET_APPLICATION:
-      return initialValues
+      return initialState
     case COMPLETE_STEP:
       return {
         ...state,
