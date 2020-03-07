@@ -146,7 +146,10 @@ export const RECRUITMENT_HEADER_QUERY = graphql`
   query ReccruitmentHeaderQuery {
     recruitmentHeader: file(relativePath: { eq: "recruitment-header.png" }) {
       childImageSharp {
-        fluid(quality: 100) {
+        fluid(
+          quality: 100
+          traceSVG: { background: "#fff", color: "#eb2980" }
+        ) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
