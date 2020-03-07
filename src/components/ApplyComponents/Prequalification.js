@@ -9,6 +9,7 @@ import {
 import tickmark from "../../images/tickmark.svg"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { Title } from "./ApplyTitle"
 
 const ContentContainer = styled.div`
   display: flex;
@@ -20,11 +21,6 @@ const ContentContainer = styled.div`
 `
 
 const TextContainer = styled.div``
-
-const Title = styled.h1`
-  color: #e1e1e1;
-  font-size: 5rem;
-`
 
 const Subtitle = styled.h5`
   font-weight: 600;
@@ -102,18 +98,6 @@ const StyledLink = styled(Link)`
 `
 
 const Prequalification = ({ state, dispatch }) => {
-  const toggleQualify = (stepIsQualified, stepIndex) => {
-    dispatch({
-      type: TOGGLE_QUALIFY,
-      stepIsQualified,
-      stepIndex,
-    })
-  }
-
-  const completeStep = stepIndex => {
-    dispatch({ type: COMPLETE_STEP, stepIndex })
-  }
-
   const renderActiveQuestion = ({ index, step }) => {
     return (
       <div key={step.stepNumber}>
@@ -130,11 +114,19 @@ const Prequalification = ({ state, dispatch }) => {
               <YesButton
                 stepIsQualified={step.stepIsQualified}
                 text="Yes"
-                onClick={() => completeStep(index)}
+                onClick={() =>
+                  dispatch({ type: COMPLETE_STEP, stepIndex: index })
+                }
               />
               <NoButton
                 text="No"
-                onClick={() => toggleQualify(false, index)}
+                onClick={() =>
+                  dispatch({
+                    type: TOGGLE_QUALIFY,
+                    stepIsQualified: false,
+                    stepIndex: index,
+                  })
+                }
                 isSelected={!step.stepIsQualified}
               />
             </ButtonContainer>

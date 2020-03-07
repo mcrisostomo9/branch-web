@@ -2,8 +2,9 @@ import React, { useContext } from "react"
 import styled from "styled-components"
 import Container from "../Shared/Container"
 import bg from "../../images/bg-apply.png"
-import { Context, initialState } from "../../context/Context"
+import { Context } from "../../context/Context"
 import Prequalification from "./Prequalification"
+import SubmitForm from "./SubmitForm"
 
 const Root = styled.div`
   background-image: url(${bg});
@@ -22,7 +23,7 @@ const Application = () => {
     <Root>
       <StyledContainer>
         {state.isQualified && state.activeStep === 4 ? (
-          <div>form</div>
+          <SubmitForm />
         ) : (
           <Prequalification state={state} dispatch={dispatch} />
         )}

@@ -10,9 +10,9 @@ const Root = styled.button`
   cursor: pointer;
 `
 
-const Button = ({ onClick, text, className }) => {
+const Button = ({ onClick, text, className, type }) => {
   return (
-    <Root onClick={onClick} className={className}>
+    <Root type={type} onClick={onClick} className={className}>
       {text}
     </Root>
   )

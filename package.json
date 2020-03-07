@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "branch-web",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Branch",
+  "version": "1.0.0",
+  "author": "Mark Crisostomo <mcrisostomo9@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "framer-motion": "^1.8.4",
@@ -23,6 +23,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-hook-form": "^4.10.2",
     "react-icons": "^3.9.0",
     "react-intersection-observer": "^8.26.1",
     "resize-observer-polyfill": "^1.5.1",
