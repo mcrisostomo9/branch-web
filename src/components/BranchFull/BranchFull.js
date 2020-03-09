@@ -175,10 +175,6 @@ const BranchFull = ({
 }) => {
   const node = useRef()
 
-  const toggleBranchOpen = () => {
-    dispatch({ type: CLOSE_BRANCH })
-  }
-
   const handleClickOutside = useCallback(
     e => {
       if (node.current.contains(e.target)) {
@@ -186,9 +182,9 @@ const BranchFull = ({
         return
       }
       // outside click
-      toggleBranchOpen()
+      dispatch({ type: CLOSE_BRANCH })
     },
-    [toggleBranchOpen]
+    [dispatch]
   )
 
   useEffect(() => {

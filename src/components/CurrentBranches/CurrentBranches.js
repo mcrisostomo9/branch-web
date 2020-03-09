@@ -1,6 +1,5 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
 import {
   CarouselProvider,
   Slide,
@@ -19,6 +18,7 @@ import { mq } from "../../utils/styles"
 import { useMeasure } from "../../utils/hooks"
 import { Context } from "../../context/Context"
 import { AnimatePresence } from "framer-motion"
+import AngleIcon from "../Shared/AngleIcon"
 
 const Root = styled(Container)``
 
@@ -116,10 +116,10 @@ const CurrentBranches = ({ branches }) => {
             </TextContainer>
             <ButtonContainer>
               <ButtonBack className="btn-back">
-                <FaAngleLeft />
+                <AngleIcon direction="left" />
               </ButtonBack>
               <ButtonNext className="btn-next">
-                <FaAngleRight />
+                <AngleIcon direction="right" />
               </ButtonNext>
             </ButtonContainer>
           </FirstLineContainer>
