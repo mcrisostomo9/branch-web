@@ -1,9 +1,11 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { backgroundGatsbyImage, mq } from "../../utils/styles"
 import Container from "../Shared/Container"
+import AngleIcon from "../Shared/AngleIcon"
 
 const Root = styled.div`
   position: relative;
@@ -20,11 +22,7 @@ const HeroText = styled(Container)`
 
   @media (min-width: ${mq.m1024}) {
     padding-top: 12rem;
-    padding-bottom: 5rem;
-  }
-
-  @media (min-width: ${mq.m1440}) {
-    padding-bottom: 8rem;
+    padding-bottom: 0;
   }
 
   h2 {
@@ -71,6 +69,37 @@ const HeroText = styled(Container)`
   }
 `
 
+const DownArrowButton = styled.button`
+  background: transparent;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid #fff;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  :hover {
+    background: #fff;
+
+    svg {
+      color: #000;
+    }
+  }
+`
+
 const Hero = () => {
   const { hero } = useStaticQuery(HERO_QUERY)
   return (
@@ -87,6 +116,11 @@ const Hero = () => {
         </h1>
         <h2>with disruptive ceos</h2>
       </HeroText>
+      <Container>
+        <DownArrowButton onClick={() => scrollTo("#what-is-branch")}>
+          <AngleIcon direction="down" />
+        </DownArrowButton>
+      </Container>
     </Root>
   )
 }

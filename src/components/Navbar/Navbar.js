@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import styled from "styled-components"
 import { mq } from "../../utils/styles"
 import Logo from "../Shared/Logo"
@@ -67,6 +68,17 @@ const ApplyLink = styled(Link)`
   }
 `
 
+const HowItWorksLink = styled.a`
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+
+  :hover {
+    color: var(--pink-theme);
+  }
+`
+
 const Navbar = ({ className, transparent }) => (
   <Wrapper className={className} transparent={transparent}>
     <InnerContainer as="nav">
@@ -82,7 +94,7 @@ const Navbar = ({ className, transparent }) => (
           <Navlink to="/projects" text="projects" />
         </li>
         <li>
-          <Navlink to="/page-2" text="how it works" />
+          <Navlink to="/#how-it-works" text="how it works" />
         </li>
         <li>
           <ApplyLink to="/apply">apply now</ApplyLink>

@@ -39,7 +39,7 @@ const What = () => {
   // console.log(inView)
   // console.log(entry)
   return (
-    <Root ref={ref}>
+    <Root ref={ref} id="what-is-branch">
       <TextContainer>
         <SectionTitle color="var(--dark-theme)" text="what is branch?" />
         <SectionSubtitle

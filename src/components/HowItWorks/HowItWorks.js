@@ -12,7 +12,7 @@ const StyledImg = styled(Img)`
 const HowItWorks = () => {
   const { howImg } = useStaticQuery(HOW_IT_WORKS_QUERY)
   return (
-    <Container>
+    <Container id="how-it-works">
       <SectionHeader
         title="how it works"
         subtitle="our process is unique, tried and tested!"
