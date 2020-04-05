@@ -114,7 +114,7 @@ const Hero = () => {
           <br />
           businesses
         </h1>
-        <h2>with disruptive ceos</h2>
+        <h2>with fearless ceos</h2>
       </HeroText>
       <Container>
         <DownArrowButton onClick={() => scrollTo("#what-is-branch")}>
