@@ -68,7 +68,9 @@ const InfoContainer = styled.div`
 `
 
 const PartnerContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.5rem;
 `
 
 const StyledPartnerInfo = styled(PartnerInfo)`

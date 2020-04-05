@@ -33,16 +33,6 @@ const IndexPage = props => {
       <Recruitment />
       <Community />
       <Footer />
-      {/*<AnimatePresence>*/}
-      {/*  {isBranchOpen && (*/}
-      {/*    <BranchFull*/}
-      {/*      branch={branches[0]}*/}
-      {/*      logo={logo}*/}
-      {/*      mainImg={branchRipple}*/}
-      {/*      partners={placeholder}*/}
-      {/*    />*/}
-      {/*  )}*/}
-      {/*</AnimatePresence>*/}
     </StyledLayout>
   )
 }
