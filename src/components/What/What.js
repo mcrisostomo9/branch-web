@@ -44,11 +44,7 @@ const What = () => {
         <SectionTitle color="var(--dark-theme)" text="what is branch?" />
         <SectionSubtitle
           color="var(--dark-theme)"
-          text="branch is a Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          text="We work with a select few of Fearless CEO’s that understand the pain-points in their industry and identify a business opportunity. They face the challenge to capitalize due to time, skill-set, and urgency. With Branch, Fearless CEO’s who see an opportunity obtain a real partner to build revenue-generating businesses quickly, while reducing risk, costs, & maintaining momentum. To accomplish this, our process is to deploy a full-time operator who takes charge to go through our 3-phased, 12-month system. "
         />
       </TextContainer>
       <Img fluid={whatImg.childImageSharp.fluid} />
