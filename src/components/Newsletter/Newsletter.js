@@ -101,11 +101,11 @@ const Newsletter = () => {
         <TextContainer>
           <Title>
             <img src={mailIcon} alt="" />
-            join the <strong>branch</strong> newsletter
+            join the <strong>branch</strong> family
           </Title>
           <Description>
-            insights on our business and how we help shape the digital world one
-            branch at a time...
+          We’re dedicated to innovation & we are always building something. Join the family and get the latest 
+          straight to your inbox.
           </Description>
         </TextContainer>
         <Form>

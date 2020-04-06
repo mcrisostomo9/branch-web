@@ -106,11 +106,11 @@ const Hero = () => {
     <Root>
       <Img fluid={hero.childImageSharp.fluid} style={backgroundGatsbyImage} />
       <HeroText>
-        <h2>we build and launch</h2>
+        <h2>we materialize opportunities into</h2>
         <h1>
-          game
+          revenue
           <br />
-          changing
+          generating
           <br />
           businesses
         </h1>

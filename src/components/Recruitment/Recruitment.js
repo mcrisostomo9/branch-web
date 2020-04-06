@@ -134,19 +134,16 @@ const Recruitment = () => {
       <Container>
         <MainContainer>
           <InfoContainer>
-            <SectionTitle text="recruitment" color="var(--dark-theme)" />
+            <SectionTitle text="talent" color="var(--dark-theme)" />
             <RecruitmentSubtitle>
-              join <span>branch</span> & benefit from success
+              network of experts committed to <span>success</span> 
             </RecruitmentSubtitle>
             <Description>
-              our operators and implementors share a stake in the bussinesses
-              they help shape Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea com eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quimodo consequat. Duis aute irure dolor in
-              reprehenderit in.
+            All branches stem from the same root & we believe in the power of community. 
+            Our approach relies on our ever-growing network of talented individuals to 
+            give our founding teams the support & tools needed. Some have decades of 
+            experience, others bring fresh perspectives. Together, we solve problems 
+            & open doors to new opportunities.
             </Description>
             <BenefitsContainer>
               <BranchBenefits>branch benefits</BranchBenefits>
