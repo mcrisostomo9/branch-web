@@ -143,7 +143,13 @@ const Recruitment = () => {
             Our approach relies on our ever-growing network of talented individuals to 
             give our founding teams the support & tools needed. Some have decades of 
             experience, others bring fresh perspectives. Together, we solve problems 
-            & open doors to new opportunities.
+            & open doors to new opportunities.<br /><br />
+            Many have aspirations to work for a startup, but are afraid of the risk 
+            associated with that name. With Branch, each company is well-funded but that 
+            doesn’t mean there isn’t a lot to do. If you’re looking for a challenge, 
+            creative opportunity & not afraid of wearing multiple hats. We invite you 
+            to tell us more about yourself because with a Branch Startup, you’ll never 
+            ystop working toward something better. 
             </Description>
             <BenefitsContainer>
               <BranchBenefits>branch benefits</BranchBenefits>

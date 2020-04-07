@@ -4,7 +4,7 @@ import { mq } from "../../utils/styles"
 
 const Root = styled.p`
   color: ${props => props.color && props.color};
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 2;
   margin: 0;
   //
