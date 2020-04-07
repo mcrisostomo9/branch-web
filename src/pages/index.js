@@ -31,7 +31,6 @@ const IndexPage = props => {
       <HowItWorks />
       <Newsletter />
       <Recruitment />
-      <Community />
       <Footer />
     </StyledLayout>
   )
