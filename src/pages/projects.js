@@ -25,18 +25,7 @@ const ProjectsPage = props => {
       <CurrentBranchesProjects branches={allSanityBranch} />
       <ApplyToBranch />
       <Newsletter />
-      <Community />
       <Footer />
-      {/*<AnimatePresence>*/}
-      {/*  {isBranchOpen && (*/}
-      {/*    <BranchFull*/}
-      {/*      branch={branches[0]}*/}
-      {/*      logo={logo}*/}
-      {/*      mainImg={branchRipple}*/}
-      {/*      partners={placeholder}*/}
-      {/*    />*/}
-      {/*  )}*/}
-      {/*</AnimatePresence>*/}
     </StyledLayout>
   )
 }
