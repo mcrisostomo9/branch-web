@@ -176,7 +176,7 @@ const Footer = () => {
           <SocialIcon isWhite social="angellist" />
         </SocialContainer>
         <Border />
-        <Copyright>© branch {new Date().getFullYear()}</Copyright>
+        <Copyright>© branch startup studio {new Date().getFullYear()}. all rights reserved.</Copyright>
         <Newsletter>
           <NewsletterText>
             <img src={mailIcon} alt="mail icon" />
