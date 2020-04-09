@@ -8,7 +8,7 @@ import TalentPool from "../components/TalentPool/TalentPool"
 import BranchBenefits from "../components/BranchBenefits/BranchBenefits"
 import CurrentOpenings from "../components/CurrentOpenings/CurrentOpenings"
 
-const RecruitmentPage = props => {
+const CareersPage = props => {
   return (
     <Layout>
       <SEO title="Recruitment" />
@@ -22,4 +22,4 @@ const RecruitmentPage = props => {
   )
 }
 
-export default RecruitmentPage
+export default CareersPage

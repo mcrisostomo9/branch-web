@@ -117,7 +117,7 @@ const RecruitmentHeader = () => {
     <Root>
       <StyledContainer>
         <TextContainer>
-          <SectionTitle text="recruitment" />
+          <SectionTitle text="careers" />
           <Subtitle>
             join <span>branch</span> & benefit from success
           </Subtitle>
