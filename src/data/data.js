@@ -24,31 +24,31 @@ export const benefits = [
 
 export const branchBenefitsIcon = [
   {
-    title: "great team",
+    title: "equity plan",
     description:
       "Lorem ipsum dolor  eum eveniet impedit incidunt minima nisi suscipit!",
     icon: people,
   },
   {
-    title: "equity fund",
+    title: "passion projects",
     description:
       "Lorem ipsum dolor dolore  error  incidunt minima nisi suscipit!",
     icon: cocktail,
   },
   {
-    title: "get paid",
+    title: "build & ship fast",
     description:
       "Lorem ipsum dolor dolore  error  incidunt minima nisi suscipit!",
     icon: dollar,
   },
   {
-    title: "all star",
+    title: "innovate-first",
     description:
       "Lorem ipsum dolor dolore  error  incidunt minima nisi suscipit!",
     icon: trophy,
   },
   {
-    title: "remote",
+    title: "friendly vibes",
     description:
       "Lorem ipsum dolor dolore  error  incidunt minima nisi suscipit!",
     icon: world,
