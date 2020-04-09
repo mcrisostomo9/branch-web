@@ -103,7 +103,11 @@ const Newsletter = () => {
   const onSubmit = async data => {
     console.log(data)
     const res = await fetch("/.netlify/functions/subscribe", {
-      email: data.email,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data.email),
     })
     console.log(res.data)
   }
