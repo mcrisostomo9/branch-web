@@ -115,7 +115,7 @@ const Branch = ({ branch }) => {
         <BranchName>{branch.branchName}</BranchName>
         <Tagline>{branch.tagline}</Tagline>
         <ViewCaseStudyButton onClick={() => handleClick(branch)}>
-          view case study
+          view details
         </ViewCaseStudyButton>
       </TextContainer>
       <StyledPartnerInfo

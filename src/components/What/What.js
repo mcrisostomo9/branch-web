@@ -46,10 +46,9 @@ const What = () => {
           color="var(--dark-theme)"
           style="margin-top:10px;"
           text="We work with Fearless CEO’s that understand their industry and identify a business opportunity. 
-          They face a challenge to capitalize due to time, skill-set, and urgency. At Branch, our process is to 
-          deploy a full-time operator who takes charge to go through our 3-phased, 12-month system & leverage our 
-          studio’s infrastructure. These individuals who see an opportunity obtain a real partner to build revenue-generating 
-          businesses quickly, while reducing risk, costs, & maintaining momentum. "
+          These individuals obtain a real partner to build revenue-generating businesses quickly, while reducing risk, 
+          costs, & maintaining momentum. We accomplish this by deploying a full-time operator who takes charge to go 
+          through our 3-phased, 12-month system & leverage our studio’s infrastructure. "
         />
       </TextContainer>
       <Img fluid={whatImg.childImageSharp.fluid} />

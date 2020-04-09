@@ -111,7 +111,7 @@ const CurrentBranches = ({ branches }) => {
               />
               <SectionSubtitle
                 color="var(--light-theme)"
-                text="some of our most recent partnerships"
+                text="ideas transitioned into real companies"
               />
             </TextContainer>
             <ButtonContainer>

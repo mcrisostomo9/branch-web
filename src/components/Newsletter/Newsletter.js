@@ -104,7 +104,7 @@ const Newsletter = () => {
             join the <strong>branch</strong> family
           </Title>
           <Description>
-            We’re dedicated to innovation & we are always building something.
+            We’re dedicated to innovation & we’re constantly building. 
             Join the family and get the latest straight to your inbox.
           </Description>
         </TextContainer>

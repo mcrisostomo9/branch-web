@@ -28,7 +28,7 @@ const CurrentBranchesProjects = ({ branches }) => {
       <Container>
         <SectionHeader
           title="current branches"
-          subtitle="some of our most recent partnerships"
+          subtitle="ideas transitioned into real companies"
           color="var(--light-theme)"
         />
         <BranchContainer>

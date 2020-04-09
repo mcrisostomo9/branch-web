@@ -110,7 +110,7 @@ const BranchProject = ({ branch }) => {
           />
         </InnerContainer>
         <ViewCaseStudyButton onClick={() => handleClick(branch)}>
-          view case study
+          view details
         </ViewCaseStudyButton>
       </PartnerContainer>
     </Root>
