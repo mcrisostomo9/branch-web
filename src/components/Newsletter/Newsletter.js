@@ -4,6 +4,7 @@ import Container from "../Shared/Container"
 import { mq } from "../../utils/styles"
 import bg from "../../images/newsletter-bg.png"
 import mailIcon from "../../images/icon-mail.svg"
+import { useForm } from "react-hook-form"
 
 const Root = styled(Container)`
   display: flex;
@@ -68,15 +69,17 @@ const Description = styled.p`
 `
 
 const Form = styled.form`
+  position: relative;
   width: 100%;
+  border-radius: 5px;
 
   //margin: auto auto auto 2rem;
   margin-top: 1rem;
 
   input {
     width: 100%;
-    border-radius: 5px;
     border: none;
+    border-radius: 5px;
     padding: 1rem;
   }
 
@@ -84,17 +87,27 @@ const Form = styled.form`
     max-width: 650px;
     margin-left: 3rem;
   }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: transparent;
+    border: none;
+  }
 `
 
-// const LeftBranch = styled.img`
-//   //position: absolute;
-//   width: 180px;
-//   //left: -100px;
-//   z-index: 0;
-//   //top: 50%;
-// `
-
 const Newsletter = () => {
+  const { register, handleSubmit, errors } = useForm()
+
+  const onSubmit = async data => {
+    console.log(data)
+    const res = await fetch("/.netlify/functions/subscribe", {
+      email: data.email,
+    })
+    console.log(res.data)
+  }
+
   return (
     <Root>
       <MainContainer>
@@ -108,8 +121,14 @@ const Newsletter = () => {
             family and get the latest straight to your inbox.
           </Description>
         </TextContainer>
-        <Form>
-          <input type="email" placeholder="Please enter your email" />
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="email"
+            ref={register}
+            name="email"
+            placeholder="Please enter your email"
+          />
+          {/*<button type="submit">submit</button>*/}
         </Form>
       </MainContainer>
     </Root>

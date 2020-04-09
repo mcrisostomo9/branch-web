@@ -2,15 +2,22 @@ const Hubspot = require("hubspot")
 const fetch = require("node-fetch")
 
 exports.handler = async (event, context, callback) => {
+  // Only allow POST
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" }
+  }
+
   const hubspot = new Hubspot({
     apiKey: process.env.HUBSPOT_API_KEY,
   })
+  const { payload } = JSON.parse(event.body)
 
+  let email = payload.email
   let data = {
     fields: [
       {
         name: "email",
-        value: "example@example.com",
+        value: email,
       },
     ],
   }
