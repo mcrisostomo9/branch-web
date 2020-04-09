@@ -82,6 +82,14 @@ export const INDEX_QUERY = graphql`
               }
             }
           }
+          socialMedia {
+            twitter
+            facebook
+            instagram
+            linkedin
+            crunchbase
+            angellist
+          }
         }
       }
     }

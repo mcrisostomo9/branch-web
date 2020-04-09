@@ -76,6 +76,14 @@ export const COMPANIES_QUERY = graphql`
               }
             }
           }
+          socialMedia {
+            twitter
+            facebook
+            instagram
+            linkedin
+            crunchbase
+            angellist
+          }
         }
       }
     }

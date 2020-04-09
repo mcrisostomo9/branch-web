@@ -153,7 +153,7 @@ const SocialContainer = styled.div`
 
   @media (min-width: ${mq.m768}) {
     a {
-      margin: 0 1.5rem 0 0;
+      margin: 0 1rem 0 0;
     }
   }
 `
@@ -171,12 +171,12 @@ const BranchFull = ({
     tagline,
     bulletPoints,
     partners,
+    socialMedia,
   },
   dispatch,
   isBranchOpen,
 }) => {
   const node = useRef()
-
   const handleClickOutside = useCallback(
     e => {
       if (node.current.contains(e.target)) {
@@ -200,6 +200,18 @@ const BranchFull = ({
       document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [isBranchOpen, handleClickOutside])
+
+  const renderSocial = () => {
+    let socialArray = []
+    for (let [social, link] of Object.entries(socialMedia)) {
+      if (link !== null || "") {
+        socialArray.push({ social, link })
+      }
+    }
+    return socialArray.map(i => (
+      <SocialIcon key={i.social} social={i.social} link={i.link} />
+    ))
+  }
 
   return (
     <Root
@@ -248,14 +260,7 @@ const BranchFull = ({
               )
             })}
           </BulletPoints>
-          <SocialContainer>
-            <SocialIcon social="twitter" />
-            <SocialIcon social="facebook" />
-            <SocialIcon social="instagram" />
-            <SocialIcon social="linkedin" />
-            <SocialIcon social="crunchbase" />
-            <SocialIcon social="angellist" />
-          </SocialContainer>
+          <SocialContainer>{renderSocial()}</SocialContainer>
         </InfoContainer>
       </ContentContainer>
     </Root>
