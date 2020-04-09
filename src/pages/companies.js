@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/Shared/layout"
 import SEO from "../components/seo"
 import Newsletter from "../components/Newsletter/Newsletter"
-import Community from "../components/Community/Community"
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
 import { Context } from "../context/Context"
@@ -15,7 +14,7 @@ const StyledLayout = styled(Layout)`
   position: relative;
 `
 
-const ProjectsPage = props => {
+const CompaniesPage = props => {
   const { isBranchOpen } = useContext(Context)
   const { allSanityBranch } = props.data
   return (
@@ -30,10 +29,10 @@ const ProjectsPage = props => {
   )
 }
 
-export default ProjectsPage
+export default CompaniesPage
 
-export const PROJECTS_QUERY = graphql`
-  query projectsQuery {
+export const COMPANIES_QUERY = graphql`
+  query companiesQuery {
     allSanityBranch {
       edges {
         node {
