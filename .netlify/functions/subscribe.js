@@ -12,6 +12,7 @@ exports.handler = async (event, context, callback) => {
   })
   const { payload } = JSON.parse(event.body)
 
+  console.log(event.body)
   let email = payload.email
   let data = {
     fields: [
