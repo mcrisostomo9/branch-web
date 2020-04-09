@@ -69,20 +69,22 @@ const TalentPool = () => {
   return (
     <Container>
       <SectionHeader
-        title="talent pool"
-        subtitle="people at branch are the secret weapon to your success"
+        title="invest in your future"
+        subtitle="participate in profit & equity-share"
         color="var(--light-theme)"
       />
       <ContentContainer>
         <TextContainer>
-          <Leading>think you have what it takes?</Leading>
+          <Leading>earn today, invest in the future</Leading>
           <Description>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-            deleniti esse explicabo fugiat voluptas. Ad corporis harum in
-            maiores minus nisi porro quo, repudiandae sit veritatis. Eligendi,
-            facere, possimus. Autem fuga, incidunt maiores nobis, optio placeat
-            quae qui quod reiciendis reprehenderit rerum saepe sit suscipit
-            ullam voluptatem! Libero, odio rerum!
+            We’re determined to challenge the way job opportunities are
+            structured. At Branch, we believe everyone should earn present-day,
+            while investing in their future. That mindset brought the creative
+            capital fund to fruition. All team-members, in addition to their
+            salary & project compensation, obtain shares in the creative capital
+            fund where collectively profit-sharing and equity-earn out are
+            received by our startups are distributed depending on the shares
+            earned by each individual.
           </Description>
           <CtaContainer>
             <Button text="apply to join" />

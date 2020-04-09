@@ -15,7 +15,7 @@ const HowItWorks = () => {
     <Container id="how-it-works">
       <SectionHeader
         title="how it works"
-        subtitle="our process is unique, tried and tested!"
+        subtitle="3-phased, 12-month collaborative system"
         color="var(--light-theme)"
       />
       <StyledImg fluid={howImg.childImageSharp.fluid} />

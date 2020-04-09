@@ -158,10 +158,10 @@ const Footer = () => {
         <StyledLogo />
         <NavContainer>
           <li>
-            <Navlink to="/recruitment" text="recruitment" />
+            <Navlink to="/careers" text="careers" />
           </li>
           <li>
-            <Navlink to="/projects" text="projects" />
+            <Navlink to="/companies" text="companies" />
           </li>
           <li>
             <Navlink to="/apply" text="apply now" />
@@ -176,7 +176,10 @@ const Footer = () => {
           <SocialIcon isWhite social="angellist" />
         </SocialContainer>
         <Border />
-        <Copyright>© branch {new Date().getFullYear()}</Copyright>
+        <Copyright>
+          © branch startup studio {new Date().getFullYear()}. all rights
+          reserved.
+        </Copyright>
         <Newsletter>
           <NewsletterText>
             <img src={mailIcon} alt="mail icon" />

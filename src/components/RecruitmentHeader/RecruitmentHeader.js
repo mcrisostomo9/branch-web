@@ -117,9 +117,9 @@ const RecruitmentHeader = () => {
     <Root>
       <StyledContainer>
         <TextContainer>
-          <SectionTitle text="careers" />
+          <SectionTitle text="community" />
           <Subtitle>
-            join <span>branch</span> & benefit from success
+            be <span>intimately</span> involved in the process
           </Subtitle>
           <BenefitsContainer>
             {benefits.map(benefit => {
