@@ -164,9 +164,6 @@ const Footer = () => {
             <Navlink to="/projects" text="projects" />
           </li>
           <li>
-            <Navlink to="/page-2" text="how it works" />
-          </li>
-          <li>
             <Navlink to="/apply" text="apply now" />
           </li>
         </NavContainer>
@@ -183,7 +180,7 @@ const Footer = () => {
         <Newsletter>
           <NewsletterText>
             <img src={mailIcon} alt="mail icon" />
-            join the branch newsletter
+            join the branch family
           </NewsletterText>
           <Form>
             <input type="email" placeholder="enter your email" />
