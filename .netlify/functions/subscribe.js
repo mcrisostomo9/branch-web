@@ -44,6 +44,7 @@ exports.handler = async (event, context, callback) => {
   hubspot.forms
     .submit("7448833", "117cadbe-8565-4c1d-b3fc-f6cfe9263b19", data)
     .then(res => console.log(res))
+    .catch(e => console.log(e))
 
   callback(null, {
     statusCode: 200,
