@@ -6,19 +6,19 @@ import world from "../images/benefits-world.svg"
 
 export const benefits = [
   {
-    title: "our people",
+    title: "not your standard opportunity",
     description:
-      "branch members are at the core of our bussiness enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
+      "We’re not tied to a set job description or type. Starting a company, sometimes means reinventing everything-- even challenge the norm. Browse the opportunities below, you’ll find short-term, full-time, and contract career options. ",
   },
   {
-    title: "shared passion",
+    title: "power in numbers",
     description:
-      "as a branch member, you share a stake in the busines you work on, which means every one involved has a vested interest in making the companies we work on, a success, Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+      "Our talent pool is spread across the globe. We’re attracted to individuals who get it, want it, and the capacity to handle it. This keeps our perspectives fresh & allow for our companies to stay lean, while working with the best.",
   },
   {
-    title: "selective by nature",
+    title: "friendly vibes",
     description:
-      "branch is exclusive, we only hire the best people to work on our projects, we expect a lot from you, and offer great rewards in return Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea cUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea cUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea cUt enim ad minim veniam, quis nostrud.",
+      "It’s thrilling to challenge the industry’s status quo. We take each opportunity with grit, but having fun is a big part of the game. We have an open office with an open-door policy. Anyone can come hang, participate in projects, and share creative vibes.",
   },
 ]
 

@@ -172,7 +172,7 @@ const Recruitment = () => {
                 </SingleBenefit>
                 <SingleBenefit>
                   <img src={dollar} alt="" />
-                  <span>creative & innovation-first culture</span>
+                  <span>innovate-first culture</span>
                 </SingleBenefit>
               </BenefitsList>
             </BenefitsContainer>
