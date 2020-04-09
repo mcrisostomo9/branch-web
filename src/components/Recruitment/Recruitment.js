@@ -160,25 +160,25 @@ const Recruitment = () => {
               <BenefitsList>
                 <SingleBenefit>
                   <img src={world} alt="" />
-                  <span>work on world class projects</span>
+                  <span>unique equity & profit-sharing plan</span>
                 </SingleBenefit>
                 <SingleBenefit>
                   <img src={people} alt="" />
-                  <span>experienced & successful team</span>
+                  <span>select projects that align with you</span>
                 </SingleBenefit>
                 <SingleBenefit>
                   <img src={network} alt="" />
-                  <span>great projects find you!</span>
+                  <span>agile in nature, build & ship fast</span>
                 </SingleBenefit>
                 <SingleBenefit>
                   <img src={dollar} alt="" />
-                  <span>join the creative capital fund</span>
+                  <span>creative & innovation-first culture</span>
                 </SingleBenefit>
               </BenefitsList>
             </BenefitsContainer>
             <CtaContainer>
-              <Link to="apply">
-                <Button text="apply to join" />
+              <Link to="tell-us-about-you">
+                <Button text="tell us about you" />
               </Link>
               <CtaLink
                 text="learn more"
