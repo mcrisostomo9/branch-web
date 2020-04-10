@@ -131,6 +131,7 @@ const NewsletterText = styled.div`
 
 const Form = styled.form`
   margin-top: 1rem;
+  position: relative;
   input {
     width: 100%;
     min-width: 250px;
@@ -152,6 +153,7 @@ const Form = styled.form`
   }
 
   p {
+    position: absolute;
     color: #fff;
   }
 `
@@ -162,7 +164,7 @@ const Footer = () => {
     handleSubmit,
     formState: { isSubmitting, isSubmitted },
   } = useForm()
-  const [message, setMessage] = useState()
+  const [message, setMessage] = useState("")
 
   const onSubmit = data => {
     fetch("/.netlify/functions/subscribe", {

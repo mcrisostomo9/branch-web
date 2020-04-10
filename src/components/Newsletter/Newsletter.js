@@ -69,6 +69,7 @@ const Description = styled.p`
 `
 
 const Form = styled.form`
+  position: relative;
   width: 100%;
   border-radius: 5px;
   margin-top: 1rem;
@@ -86,6 +87,7 @@ const Form = styled.form`
   }
 
   p {
+    position: absolute;
     color: #fff;
   }
 `
@@ -96,7 +98,7 @@ const Newsletter = () => {
     handleSubmit,
     formState: { isSubmitting, isSubmitted },
   } = useForm()
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("dfsdf")
 
   const onSubmit = data => {
     fetch("/.netlify/functions/subscribe", {
@@ -134,7 +136,7 @@ const Newsletter = () => {
             placeholder="Please enter your email"
           />
           {isSubmitting && <p>Submitting...</p>}
-          {isSubmitted && <p>{message}</p>}
+          {true && <p>{message}</p>}
         </Form>
       </MainContainer>
     </Root>
