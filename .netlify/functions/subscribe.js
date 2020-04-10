@@ -10,10 +10,8 @@ exports.handler = async (event, context, callback) => {
   const hubspot = new Hubspot({
     apiKey: process.env.HUBSPOT_API_KEY,
   })
-  const { payload } = JSON.parse(event.body)
+  const email = JSON.parse(event.body)
 
-  console.log(event.body)
-  let email = payload.email
   let data = {
     fields: [
       {
