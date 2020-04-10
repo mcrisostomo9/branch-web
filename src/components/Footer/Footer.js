@@ -174,7 +174,7 @@ const Footer = () => {
     })
       .then(res => res.json())
       .then(data => {
-        setMessage(data.detail.inlineMessage)
+        setMessage(data.msg)
       })
       .catch(e => console.log(e))
   }

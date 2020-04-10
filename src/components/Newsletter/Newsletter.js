@@ -96,7 +96,7 @@ const Newsletter = () => {
     handleSubmit,
     formState: { isSubmitting, isSubmitted },
   } = useForm()
-  const [message, setMessage] = useState()
+  const [message, setMessage] = useState("")
 
   const onSubmit = data => {
     fetch("/.netlify/functions/subscribe", {
@@ -108,7 +108,7 @@ const Newsletter = () => {
     })
       .then(res => res.json())
       .then(data => {
-        setMessage(data.detail.inlineMessage)
+        setMessage(data.msg)
       })
       .catch(e => console.log(e))
   }
