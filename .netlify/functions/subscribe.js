@@ -30,7 +30,7 @@ exports.handler = async (event, context, callback) => {
   callback(null, {
     statusCode: 200,
     body: JSON.stringify({
-      msg: "Success! Your future self will probably thank you.",
+      msg: "Welcome! We're stoked to have to be part of the studio.",
       detail: response,
     }),
   })
