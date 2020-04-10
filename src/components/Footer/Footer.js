@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Logo from "../Shared/Logo"
 import Container from "../Shared/Container"
@@ -6,6 +6,7 @@ import Navlink from "../Shared/Navlink"
 import { mq } from "../../utils/styles"
 import SocialIcon from "../SocialIcon/SocialIcon"
 import mailIcon from "../../images/icon-mail.svg"
+import { useForm } from "react-hook-form"
 
 const Root = styled.footer`
   background: var(--dark-text);
@@ -149,9 +150,35 @@ const Form = styled.form`
     margin-left: 1rem;
     margin-top: 0;
   }
+
+  p {
+    color: #fff;
+  }
 `
 
 const Footer = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, isSubmitted },
+  } = useForm()
+  const [message, setMessage] = useState()
+
+  const onSubmit = data => {
+    fetch("/.netlify/functions/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(res => res.json())
+      .then(data => {
+        setMessage(data.detail.inlineMessage)
+      })
+      .catch(e => console.log(e))
+  }
+
   return (
     <Root>
       <InnerContainer>
@@ -185,8 +212,15 @@ const Footer = () => {
             <img src={mailIcon} alt="mail icon" />
             join the branch family
           </NewsletterText>
-          <Form>
-            <input type="email" placeholder="enter your email" />
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              type="email"
+              ref={register}
+              name="email"
+              placeholder="Please enter your email"
+            />
+            {isSubmitting && <p>Submitting...</p>}
+            {isSubmitted && <p>{message}</p>}
           </Form>
         </Newsletter>
       </InnerContainer>

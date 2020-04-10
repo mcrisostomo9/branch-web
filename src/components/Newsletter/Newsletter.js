@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Container from "../Shared/Container"
 import { mq } from "../../utils/styles"
@@ -69,11 +69,8 @@ const Description = styled.p`
 `
 
 const Form = styled.form`
-  position: relative;
   width: 100%;
   border-radius: 5px;
-
-  //margin: auto auto auto 2rem;
   margin-top: 1rem;
 
   input {
@@ -88,20 +85,20 @@ const Form = styled.form`
     margin-left: 3rem;
   }
 
-  button {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    background: transparent;
-    border: none;
+  p {
+    color: #fff;
   }
 `
 
 const Newsletter = () => {
-  const { register, handleSubmit, errors } = useForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, isSubmitted },
+  } = useForm()
+  const [message, setMessage] = useState()
 
   const onSubmit = data => {
-    console.log(data)
     fetch("/.netlify/functions/subscribe", {
       method: "POST",
       headers: {
@@ -111,8 +108,7 @@ const Newsletter = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
-        return data
+        setMessage(data.detail.inlineMessage)
       })
       .catch(e => console.log(e))
   }
@@ -137,7 +133,8 @@ const Newsletter = () => {
             name="email"
             placeholder="Please enter your email"
           />
-          {/*<button type="submit">submit</button>*/}
+          {isSubmitting && <p>Submitting...</p>}
+          {isSubmitted && <p>{message}</p>}
         </Form>
       </MainContainer>
     </Root>
