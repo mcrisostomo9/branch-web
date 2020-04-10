@@ -100,16 +100,17 @@ const Form = styled.form`
 const Newsletter = () => {
   const { register, handleSubmit, errors } = useForm()
 
-  const onSubmit = async data => {
+  const onSubmit = data => {
     console.log(data)
-    const res = await fetch("/.netlify/functions/subscribe", {
+    fetch("/.netlify/functions/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data.email),
+      body: JSON.stringify(data),
     })
-    console.log(res.data)
+      .then(res => console.log(res))
+      .catch(e => console.log(e))
   }
 
   return (
