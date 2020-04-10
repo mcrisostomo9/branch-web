@@ -21,19 +21,17 @@ exports.handler = async (event, context, callback) => {
     ],
   }
 
-  hubspot.forms
-    .submit("7448833", "117cadbe-8565-4c1d-b3fc-f6cfe9263b19", data)
-    .then(res => {
-      console.log("success submission")
-      console.log(res)
-    })
-    .catch(e => {
-      console.log("error in submission")
-      console.log(e)
-    })
+  const response = await hubspot.forms.submit(
+    "7448833",
+    "117cadbe-8565-4c1d-b3fc-f6cfe9263b19",
+    data
+  )
 
   callback(null, {
     statusCode: 200,
-    body: "No worries, all is working fine!",
+    body: JSON.stringify({
+      msg: "Success! Your future self will probably thank you.",
+      detail: response,
+    }),
   })
 }

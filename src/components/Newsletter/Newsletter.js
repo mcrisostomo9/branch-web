@@ -109,7 +109,11 @@ const Newsletter = () => {
       },
       body: JSON.stringify(data),
     })
-      .then(res => console.log(res))
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        return data
+      })
       .catch(e => console.log(e))
   }
 
