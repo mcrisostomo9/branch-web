@@ -9,7 +9,6 @@ const LogoLink = styled(Link)`
   img {
     width: 100%;
     max-width: 150px;
-    height: 100%;
 
     @media (min-width: ${mq.m768}) {
       max-width: 175px;

@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import { MdMenu, MdClose } from "react-icons/md"
 import { motion } from "framer-motion"
 import { mq } from "../../utils/styles"
+import Navlink from "../Shared/Navlink"
 
 const Root = styled.div`
   @media (min-width: ${mq.m1024}) {
@@ -9,52 +11,120 @@ const Root = styled.div`
   }
 `
 
-const Menu = styled(motion.ul)`
-  background: #fff;
-`
+const Menu = styled(motion.div)`
+  position: fixed;
+  background: var(--dark-theme);
+  color: #fff;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
 
-const MenuItem = styled.li``
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  li {
+    margin: 1rem 0;
+  }
+`
 
 const MenuButton = styled.button`
   background: none;
   border: none;
+  height: 50px;
+  width: 50px;
+  :focus {
+    outline: none;
+  }
+`
+
+const CloseButton = styled(MenuButton)`
+  align-self: flex-end;
 `
 
 const variants = {
   open: {
     x: 0,
+  },
+  closed: {
+    x: "100%",
+  },
+}
+
+const ulVariants = {
+  open: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+      when: "afterChildren",
+    },
+  },
+}
+
+const listVariants = {
+  open: {
+    x: 0,
     opacity: 1,
   },
   closed: {
-    x: -100,
+    x: "100%",
     opacity: 0,
   },
 }
 
+const links = [
+  { text: "home", route: "/" },
+  { text: "careers", route: "/careers" },
+  { text: "companies", route: "/companies" },
+  { text: "how it works", route: "/#how-it-works" },
+  { text: "apply", route: "/apply" },
+]
+
 const MobileContainer = () => {
   const [isOpen, setOpen] = useState(false)
 
-  const open = () => {
-    console.log("clicked")
-    setOpen(!isOpen)
-  }
+  const toggle = () => setOpen(prevState => !prevState)
+
   return (
     <Root>
-      <MenuButton onClick={open}>
-        <svg viewBox="0 0 100 80" width="40" height="40" fill="#fff">
-          <rect width="100" height="15" />
-          <rect y="30" width="100" height="15" />
-          <rect y="60" width="100" height="15" />
-        </svg>
+      <MenuButton onClick={toggle}>
+        <MdMenu color="white" style={{ height: "100%", width: "100%" }} />
       </MenuButton>
       <Menu
         variants={variants}
-        initial={false}
+        initial="closed"
         animate={isOpen ? "open" : "closed"}
+        transition={{ damping: 200 }}
       >
-        <MenuItem>hello</MenuItem>
-        <MenuItem>hello</MenuItem>
-        <MenuItem>hello</MenuItem>
+        <CloseButton onClick={toggle}>
+          <MdClose color="white" style={{ height: "100%", width: "100%" }} />
+        </CloseButton>
+        <motion.ul variants={ulVariants}>
+          {links.map(link => (
+            <motion.li
+              variants={listVariants}
+              key={link.text}
+              transition={{ damping: 200 }}
+            >
+              <Navlink to={link.route} text={link.text} />
+            </motion.li>
+          ))}
+        </motion.ul>
       </Menu>
     </Root>
   )

@@ -98,7 +98,7 @@ const Newsletter = () => {
     handleSubmit,
     formState: { isSubmitting, isSubmitted },
   } = useForm()
-  const [message, setMessage] = useState("dfsdf")
+  const [message, setMessage] = useState("")
 
   const onSubmit = data => {
     fetch("/.netlify/functions/subscribe", {
@@ -136,7 +136,7 @@ const Newsletter = () => {
             placeholder="Please enter your email"
           />
           {isSubmitting && <p>Submitting...</p>}
-          {true && <p>{message}</p>}
+          {isSubmitted && <p>{message}</p>}
         </Form>
       </MainContainer>
     </Root>

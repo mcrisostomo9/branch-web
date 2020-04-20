@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { mq } from "../../utils/styles"
 import Logo from "../Shared/Logo"
 import Navlink from "../Shared/Navlink"
+import MobileContainer from "./MobileContainer"
 
 const Wrapper = styled.header`
   ${props =>
@@ -17,7 +18,7 @@ const Wrapper = styled.header`
 const InnerContainer = styled.div`
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
   width: 100%;
   max-width: var(--max-width);
   margin: auto;
@@ -100,8 +101,7 @@ const Navbar = ({ className, transparent }) => (
           <ApplyLink to="/apply">apply now</ApplyLink>
         </li>
       </LinkContainer>
-      {/*TODO revisit mobile container*/}
-      {/*<MobileContainer />*/}
+      <MobileContainer />
     </InnerContainer>
   </Wrapper>
 )
